@@ -166,11 +166,13 @@ a:hover{
     align-items: center;
     margin: 10px;
     border-radius: 1.5em;
-    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .showcase-item h3 {
-    background-color: rgb(153, 196, 230);
+    background-color: rgb(185, 219, 245);
+    border-radius: 1.0em;
 }
 
 
