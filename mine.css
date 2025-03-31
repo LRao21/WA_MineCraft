@@ -89,6 +89,8 @@ footer a {
     border-radius: 1.5em;
     padding-left: 10px;
     padding-right: 10px;
+    width: 200px;
+    margin-left: 80x;
 }
 
 #site {
@@ -102,6 +104,10 @@ footer a {
     margin-top: 10px;
 }
 
+#moon{
+    margin-top:9px;
+    float:right;
+}
 /*---------------------*/
 
 /* Main-Section Lead */
