@@ -126,6 +126,11 @@ footer a {
     margin-top: 50px;
  }
 
+ h3 {
+    font-size: 30px;
+    text-align: center;
+ }
+
  p {
     font-size: 18px;
     text-align: center;
@@ -145,6 +150,30 @@ a:hover{
     text-decoration: none;
     color:rgb(94, 110, 190);
 }
+/*---------------------*/
+
+/*Showcase*/
+
+.showContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 50px;
+}
+
+.showcase-item {
+    background-color:rgb(135, 186, 227);
+    height: 400px;
+    align-items: center;
+    margin: 10px;
+    border-radius: 1.5em;
+    padding: 20px;
+}
+
+.showcase-item h3 {
+    background-color: rgb(153, 196, 230);
+}
+
+
 /*---------------------*/
 
 /* On-page navigation */
