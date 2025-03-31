@@ -1,0 +1,165 @@
+/* General Structure (Base) */
+body {
+    background-image: url('images/night.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-size: 22px;
+    line-height: 125%;
+    font-family: 'Calibri', sans-serif;
+}
+
+.wrapper {
+    background: rgb(220, 237, 246);
+    width: 65%;
+    height:100%;
+    margin: auto;
+}
+
+.site-header{
+    background: rgb(189, 229, 250);
+    padding-top: 30px;
+    height: 160px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+main {
+    background: rgb(220, 237, 246);
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+footer {
+    background: rgb(40, 40, 78);
+    text-align: center;
+    font-size: 16px;
+    padding: 20px;
+}
+footer p {
+    color: white;
+}
+footer a {
+    color:rgb(194, 89, 194);
+}
+/*---------------------*/
+
+/* Site header */
+
+.site-logo {
+    height: 100px;
+    width: 220px;
+    float:left;
+    margin-left: 50px;
+}
+
+.navContainer{
+    width: 75%;
+    float:right;
+}
+
+.navSite{
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    color: rgba(104, 48, 104, 0.688);
+    background: rgb(192, 216, 255);
+    box-shadow: 2px 5px;
+    padding: 8px;
+}
+		
+.navSite:hover{
+     color: rgb(125, 90, 165);
+     background: rgb(214, 182, 19);	
+}
+
+#user {
+    width: 60%;
+    font-size: 18px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: rgb(192, 216, 255);
+    text-align: center;
+    float: right;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+#searchBar{
+    border-radius: 1.5em;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#site {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: wheat;
+    text-align: center;
+    float: right;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+/*---------------------*/
+
+/* Main-Section Lead */
+ .lead img {
+    width: 100%;
+    border-radius: 1.5em;
+ }
+
+ h1 {
+    font-size: 64px;
+    color: rgb(81, 7, 104);
+    text-align: center;
+    margin-top: 50px;
+ }
+/*---------------------*/
+
+ /* Links */
+a {
+    padding: 5px;
+    text-decoration: none;
+    color:rgb(104, 48, 104);
+    font-weight: bold;
+}
+
+a:hover{
+    padding: 5px;
+    text-decoration: none;
+    color:rgb(94, 110, 190);
+}
+/*---------------------*/
+
+/* On-page navigation */
+.nav{
+    border-radius: 0.5em;
+    background-color: pink;
+    text-decoration: none;
+    padding: 5px;
+    box-shadow: 2px 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 100px;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.nav:hover {
+    border-radius: 1em;
+    background-color: powderblue;
+    color:rgb(125, 90, 165);
+    text-decoration: none;
+    padding: 5px;
+    box-shadow: 2px 5px;
+}
+
+.nav:hover a{
+    padding: 5px;
+    text-decoration: none;
+    color:rgb(125, 90, 165);
+    font-weight: bold;
+}
+/*----------------------------*/

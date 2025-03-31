@@ -11,37 +11,49 @@
     <div class="wrapper">
       <header class="site-header">
         <a href="home.html">
-		   <img style = "width: 300px; height:160px;" class="site-logo" src="images/site-logo.svg" alt="MineCraft_CrossRoads">
+		   <img class="site-logo" src="images/site-logo.svg" alt="MineCraft_CrossRoads">
 		</a>
-        <nav class="site-nav">
-           <a href="gallery.html">Gallery</a>
-           <a href="reviews.html">Reviews</a>
-		   <a href="3D.html">Experiment</a>    	   
-           <a href="about.html">About</a>	
-        </nav>
-		<nav class="user-action">
-			<a href="user.html">Log In/Sign Up</a>
-			<label for="searchBar">Search</label>
-			<img src = "images/stars.png" alt = "switch_lighting">
-			<input type="text" id="searchBar" name="searchBar">
-		 </nav>
+		<div class = "navContainer">
+			<nav class="site-nav" id = "site">
+				<a class = "navSite" href="gallery.html">Gallery</a>
+				<a class = "navSite" href="reviews.html">Reviews</a>
+				<a class = "navSite" href="3D.html">Experiment</a>    	   
+				<a class = "navSite" href="about.html">About</a>	
+			</nav>
+			<nav class="site-nav" id = "user">
+				<a  href="user.html">Log In/Sign Up</a>
+				<input type="text" id="searchBar" name="searchBar" placeholder="  Search">
+				<img src = "images/stars.png" alt = "switch_lighting">
+			</nav>
+		</div>
       </header>
     
 	  <main>
         <section class="lead">
 
-			<h1 class="primary-statement">Primary Statement</h1>
+			<h1 class="primary-statement">Crossroads of Minecraft and Architecture</h1>
 
-			<p class="secondary-statement">Secondary statement</p>
+			<p class="secondary-statement">Explore and experiment with some of the architectural 
+				elements and considerations in real-life designs that cross into the architecture of Minecraft builds, 
+				as well as the ones in Minecraft that don't. Two paths, so many crossroads! </p>
 
 			<div class="lead-display">
-				<img src="images/lead-image.jpg" alt="Big Picture of Something to do with the site.">  <!-- visual lead -->
+				<img src="images/lead.jpg" alt="Inspiration">
 			</div>
 
-			<p>Paragraph introducing users to the site. What it does. Why it exists. What they can do. What they can expect to experience. That sort of thing.</p>
-			<p>Second paragraph continuing the work of the first.</p>
+			<p>WWhen we started playing Minecraft, we were dazzled by the worlds people had made. 
+				They were amazing because someone imagined them in every detail and brought them to life for others to enjoy, 
+				much like how architects design the public and private infrastructure of our world to be shared with our communities.</p> 
+
+			<p>However, unlike our world, Minecraft boasts creation without as many physical constraints. 
+				What then makes up a creator's process? How do creators dazzle like those in our world? 
+				Minecraft Crossroads wants to explore that difference and analyze the “Minecraft architect.” 
+				In our pages, you'll find our explorations of example builds, analysis of real-life architectural elements 
+				and their Minecraft counterparts, resources to connect explorations with their online roots, 
+				and much more! We also have a place to experiment on your own to expand our explorations, 
+				giving a unique space to mess with your inner architect as we do ours. </p>
 	
-		</section><!-- lead section ends -->
+		</section>
 
 		<section class="showcase">
 
@@ -95,8 +107,9 @@
       </main>
       <footer>
 		<p>&copy; 2025 by MineCraft_CrossRoads. All rights reserved.</p>
-		<p>Social media</p>
-		<p>Privacy, terms and conditions</p>
+		<a href = "https://www.linkedin.com/in/lavanya-rao-512988290/">Linkedin</a>
+		<p>Privacy Policy </p>
+		<p>Terms and Conditions</p>
 	  </footer>
 	</div> 
   </body>
