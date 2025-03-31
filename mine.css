@@ -181,6 +181,14 @@ a:hover{
     border-radius: 1.5em;
     padding-left: 20px;
     padding-right: 20px;
+    position: relative;
+    top: 0;
+    transition: top ease 0.5s;
+
+}
+
+.showcase-item:hover{
+    top:-10px;
 }
 
 .showcase-item h3 {
