@@ -70,7 +70,7 @@ footer a {
 		
 .navSite:hover{
      color: rgb(125, 90, 165);
-     background: rgb(214, 182, 19);	
+     background: rgba(214, 181, 19, 0.839);	
 }
 
 #user {
@@ -118,6 +118,7 @@ footer a {
 /*---------------------*/
 
 /* Main-Section Lead */
+
  .lead img {
     width: 100%;
     border-radius: 1.5em;
@@ -129,7 +130,6 @@ footer a {
     color: rgb(81, 7, 104);
     text-align: center;
     margin-top: 50px;
-
  }
 
  h2 {
@@ -181,14 +181,15 @@ a:hover{
     border-radius: 1.5em;
     padding-left: 20px;
     padding-right: 20px;
+
     position: relative;
     top: 0;
     transition: top ease 0.5s;
-
 }
 
 .showcase-item:hover{
     top:-10px;
+    background-color:rgba(214, 181, 19, 0.839);
 }
 
 .showcase-item h3 {
