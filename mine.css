@@ -4,14 +4,14 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    font-size: 22px;
-    line-height: 125%;
+    font-size: 18px;
+    line-height: 150%;
     font-family: 'Calibri', sans-serif;    
 }
 
 .wrapper {
     background: rgb(220, 237, 246);
-    width: 65%;
+    width: 80%;
     height:100%;
     margin: auto;
 }
@@ -112,9 +112,11 @@ footer a {
 
  h1 {
     font-size: 64px;
+    line-height: 150%;
     color: rgb(81, 7, 104);
     text-align: center;
     margin-top: 50px;
+
  }
 
  h2 {
@@ -122,6 +124,11 @@ footer a {
     color: rgb(62, 10, 150);
     text-align: center;
     margin-top: 50px;
+ }
+
+ p {
+    font-size: 18px;
+    text-align: center;
  }
 /*---------------------*/
 
