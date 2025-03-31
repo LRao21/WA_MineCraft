@@ -107,6 +107,13 @@ footer a {
 #moon{
     margin-top:9px;
     float:right;
+    visibility: visible;
+}
+
+#sun{
+    margin-top:9px;
+    float:right;
+    visibility: hidden;
 }
 /*---------------------*/
 
