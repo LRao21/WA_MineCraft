@@ -1,0 +1,28 @@
+.nav{
+    border-radius: 0.5em;
+    background-color: pink;
+    text-decoration: none;
+    padding: 5px;
+    box-shadow: 2px 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 100px;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.nav:hover {
+    border-radius: 1em;
+    background-color: powderblue;
+    color:rgb(125, 90, 165);
+    text-decoration: none;
+    padding: 5px;
+    box-shadow: 2px 5px;
+}
+
+.nav:hover a{
+    padding: 5px;
+    text-decoration: none;
+    color:rgb(125, 90, 165);
+    font-weight: bold;
+}
