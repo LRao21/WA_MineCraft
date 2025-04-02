@@ -119,10 +119,20 @@ footer a {
 
 /* Main-Section Lead */
 
- .lead img {
+.lead-display {
+    background-image: url("images/lead.jpg");
+    backdrop-filter: blur(2px);
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+    position:relative;
+    margin-bottom: 60px;
+}
+
+ /* .lead img {
     width: 100%;
     border-radius: 1.5em;
- }
+ } */
 
  h1 {
     font-size: 64px;
@@ -130,6 +140,25 @@ footer a {
     color: rgb(81, 7, 104);
     text-align: center;
     margin-top: 50px;
+    width: 100%;
+ }
+
+ .lead-display h1{
+    position:absolute;
+    top:160px;
+    left:10px;
+ }
+
+ .lead-display p {
+    width: 97%;
+    height: 60px;
+    position:absolute;
+    bottom: -56px;
+    color: rgb(215, 184, 224);
+    background: rgb(81, 7, 104);
+    padding-left: 16px;
+    padding-right: 16px;
+    text-align: center;
  }
 
  h2 {
