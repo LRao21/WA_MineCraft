@@ -75,14 +75,14 @@ body {
 .site-header{
     background: rgb(40, 40, 78);
     padding-top: 30px;
-    height: 160px;
+    height: 110px;
     padding-left: 20px;
     padding-right: 20px;
-    padding-bottom: 20px;
-    /* overflow: hidden;
-    position: fixed; 
+    /* overflow: hidden; */
+    position: absolute; 
     top: 0; 
-    z-index: 1; */
+    left:0;
+    z-index: 1;
 }
 
 main {
@@ -90,6 +90,7 @@ main {
     padding-left: 40px;
     padding-right: 40px;
     align-items: center;
+    min-height: 1000px;
 }
 
 footer {
@@ -109,14 +110,15 @@ footer a {
 /* Site header */
 
 .site-logo {
-    height: 100px;
+    height: 80px;
     width: 220px;
     float:left;
     margin-left: 10px;
-    margin-bottom: 70px;
+    margin-bottom: 30px;
     background:rgba(185, 219, 245, 0.118);
     padding: 20px;
     border-radius: 5em;
+    margin-top:-20px;
 }
 
 .navContainer{
@@ -132,7 +134,6 @@ footer a {
     text-align: center;
     float: right;
     margin-bottom: 10px;
-    margin-top: 4%;
 }
 
 .navSite{
