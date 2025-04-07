@@ -21,6 +21,11 @@ body {
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
+@keyframes fadeOverView {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
 @keyframes shiftColors {
     0% { color: rgb(106, 10, 136); }
     50% { color: rgb(207, 182, 214); }
@@ -45,7 +50,6 @@ body {
 }
 
 .title p {
-    height: 60px;
     background-image: linear-gradient(to bottom, rgba(214, 181, 19, 1), rgba(214, 181, 19, 0.759));;
     color: transparent;
     background-clip: text;
@@ -55,9 +59,24 @@ body {
     margin-bottom: 100px;
     padding-left: 60px;
     padding-right: 60px;
-    margin-top: 260px;
+    margin-top: 60px;
     font-family: "Arial";
     height: 100px;
+ }
+
+ #hook{
+    color: rgb(194, 89, 194);
+    text-align: center;
+    font-weight: 100;
+    font-size: 36px;
+    padding-left: 60px;
+    padding-right: 60px;
+    font-family: "Bodoni Moda SC"; 
+    opacity: 0;
+ }
+
+ #hook:hover{
+    animation: fadeOverView 4s;
  }
 
 .wrapper {
@@ -230,14 +249,15 @@ a:hover{
 
 .lead-display {
     width: 100%;
-    height: 750px;
+    height: 650px;
+    align-items: center;
 }
 
  .lead-display img {
-    width: 100%;
+    width: 90%;
     border-radius: 1.5em;
     border:rgb(81, 7, 104) 12px solid;
-    margin-left: -10px;
+    margin-left: 45px;
  }
 
 
@@ -271,10 +291,12 @@ a:hover{
 .showcase-item h3 {
     background-color: rgb(185, 219, 245);
     border-radius: 1.0em;
+    text-align: center;
 }
 
 .description{
     height: 40%;
+    text-align: center;
 }
 
 /*---------------------*/
@@ -396,6 +418,7 @@ a:hover{
   .dropdown-content p:hover {
     color: rgb(106, 10, 136);
     font-weight: bold;
+    background-color: rgba(128, 128, 128, 0.526);
   }
 
   .dropdown:hover .dropdown-content {
@@ -407,21 +430,47 @@ a:hover{
     background-color: rgba(163, 162, 163, 0.884);
     padding: 10px 30px;
     text-align: left;
-    width: 70%;
-    display: inline-block;
+    max-width: 700px;
+    display: none;
+    overflow: hidden;
+
   }
 
   .meta-content{
     background-color: rgba(128, 128, 128, 0.212);
     height: 100%;
-    width: 25%;
+    width: 35%;
     float:right;
     margin-top: 20px;
     padding-top: 5px;
+    display:none;
   }
   .context {
     row-gap: 25px;
   }
   .context th, td {
     border: 1px solid black;
+  }
+
+  .aReview{
+    margin-bottom: 20px;
+  }
+  .collapsible {
+    max-width: 760px;
+    margin-bottom: -20px;
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: rgb(223, 219, 219);
+  }
+
+  .active, .collapsible:hover {
+    background-color: rgb(94, 110, 190);
+  }
+
+  .aReview:hover .review{
+    display: inline-block;
+  }
+
+  .aReview:hover .meta-content{
+    display: inline-block;
   }
