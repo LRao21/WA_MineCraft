@@ -1,31 +1,61 @@
 /* General Structure (Base) */
 body {
-    background-image: url('images/night.jpg');
+    /* background: rgb(23, 23, 54); */
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover;
+    background-size: cover; 
+    background-image: linear-gradient(to bottom, transparent, transparent),  url('images/night.jpg');    
     font-size: 18px;
     line-height: 150%;
     font-family: 'Calibri', sans-serif;    
 }
+.title {
+    background: transparent;
+    height: 400px;
+    padding-right: 70px;
+    padding-left: 70px;
 
+}
+
+@keyframes fadeIntoView {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.title h1{
+    margin-top: 250px;
+    font-size: 70px;
+    animation: fadeIntoView 5s;
+    color: rgb(106, 10, 136);
+
+}
 .wrapper {
-    background: rgb(220, 237, 246);
-    width: 80%;
+    /* background-image: linear-gradient(to bottom, transparent, black),  url('images/night.jpg');
+    background-size: cover;  */
+    background: linear-gradient(to bottom, transparent, rgb(220, 237, 246),rgb(220, 237, 246),rgb(220, 237, 246),rgb(220, 237, 246));
+    width: 90%;
     height:100%;
     margin: auto;
+    padding-top: 200px;
+    /* margin-top: 160px; */
+
 }
 
 .site-header{
-    background: rgb(189, 229, 250);
+    background: rgb(40, 40, 78);
     padding-top: 30px;
     height: 160px;
     padding-left: 20px;
     padding-right: 20px;
+    padding-bottom: 20px;
+    /* overflow: hidden;
+    position: fixed; 
+    top: 0; 
+    z-index: 1; */
 }
 
 main {
-    background: rgb(220, 237, 246);
+    /* background: rgb(220, 237, 246); */
     padding-left: 40px;
     padding-right: 40px;
 }
@@ -50,40 +80,43 @@ footer a {
     height: 100px;
     width: 220px;
     float:left;
-    margin-left: 20px;
+    margin-left: 10px;
+    margin-bottom: 70px;
+    background:rgba(185, 219, 245, 0.118);
+    padding: 20px;
+    border-radius: 5em;
 }
 
 .navContainer{
-    width: 75%;
+    width: 78%;
+    height: 100%;
     float:right;
+}
+
+.site-nav{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    float: right;
+    margin-bottom: 10px;
+    margin-top: 4%;
 }
 
 .navSite{
     display: inline-block;
+    height: 30px;
     text-decoration: none;
     font-weight: bold;
-    color: rgba(104, 48, 104, 0.688);
-    background: rgb(192, 216, 255);
-    box-shadow: 2px 5px;
+    color: rgb(185, 219, 245);
     padding: 8px;
 }
 		
 .navSite:hover{
      color: rgb(125, 90, 165);
-     background: rgba(214, 181, 19, 0.839);	
+     background: rgba(214, 181, 19, 0.839);	 
 }
 
-#user {
-    width: 60%;
-    font-size: 18px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    background: rgb(192, 216, 255);
-    text-align: center;
-    float: right;
-    margin-bottom: 10px;
-    margin-top: 10px;
-}
 
 #searchBar{
     border-radius: 1.5em;
@@ -93,21 +126,11 @@ footer a {
     margin-left: 80x;
 }
 
-#site {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    background: wheat;
-    text-align: center;
-    float: right;
-    margin-bottom: 10px;
-    margin-top: 10px;
-}
-
 #moon{
-    margin-top:9px;
+    margin-top:10%;
     float:right;
     visibility: visible;
+    color: grey;
 }
 
 #sun{
@@ -120,19 +143,17 @@ footer a {
 /* Main-Section Lead */
 
 .lead-display {
-    background-image: url("images/lead.jpg");
-    backdrop-filter: blur(2px);
     width: 100%;
-    height: 600px;
+    height: 800px;
     background-size: cover;
     position:relative;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
 }
 
- /* .lead img {
+ .lead img {
     width: 100%;
     border-radius: 1.5em;
- } */
+ }
 
  h1 {
     font-size: 64px;
@@ -143,22 +164,24 @@ footer a {
     width: 100%;
  }
 
- .lead-display h1{
+ /* .lead-display h1{
     position:absolute;
     top:160px;
     left:10px;
- }
+ } */
 
  .lead-display p {
     width: 97%;
     height: 60px;
-    position:absolute;
-    bottom: -56px;
-    color: rgb(215, 184, 224);
-    background: rgb(81, 7, 104);
+    /* position:absolute; */
+    /* bottom: -56px; */
+    color: rgb(106, 10, 136);
     padding-left: 16px;
     padding-right: 16px;
     text-align: center;
+    font-weight: 700;
+    font-size: 30px;
+    margin-bottom: 100px;
  }
 
  h2 {
