@@ -454,6 +454,7 @@ a:hover{
 
   .aReview{
     margin-bottom: 20px;
+    float: left;
   }
   .collapsible {
     max-width: 760px;
@@ -473,4 +474,16 @@ a:hover{
 
   .aReview:hover .meta-content{
     display: inline-block;
+  }
+
+  .micro-reviews {
+    background-color: ghostwhite;
+    height: 100%;
+    width: 20%;
+    display: inline-block;
+
+  }
+
+  .aReview:hover ~ .micro-reviews{
+    display: none;
   }
