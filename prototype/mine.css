@@ -300,6 +300,10 @@ a:hover{
     text-align: center;
 }
 
+.showcase-item p{
+    text-align: center;
+}
+
 .description{
     height: 40%;
     text-align: center;
@@ -440,7 +444,6 @@ a:hover{
     max-width: 700px;
     display: none;
     overflow: hidden;
-
   }
 
   .meta-content{
@@ -534,3 +537,21 @@ a:hover{
   .aReview:hover ~ .micro-reviews{
     display: none;
   }
+
+  /*----------------------------*/
+
+/*About Page*/
+
+#about{
+    margin-top: -90px;
+    display:inline-block;
+    width: 93%;
+}
+
+#about h1 {
+    height: 100px;
+    text-align: center;
+    font-weight: normal;
+    background-color:rgba(106, 90, 165, 0.599);
+    margin-bottom: 30px;
+}
