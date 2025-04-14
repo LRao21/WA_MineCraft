@@ -577,21 +577,19 @@ a:hover{
 /* Gallery */
 .gallery-grid {
   display: grid;
-  grid-template-columns: auto auto auto;
-  grid-row-gap: 30px ;
-  grid-column-gap: 30px ;
+  grid-template-columns: auto auto;
+  grid-row-gap: 10px ;
+  grid-column-gap: 15px ;
   justify-items: center;
   align-items: start;
   justify-content: space-between;
   width: 850px;
-  height: 950px;
   margin-bottom: 100px;
   margin-right: 80px;
-  margin-left: 15px;
 }
               
 .gallery-item {
-  width: 300px; 
+  width: 600px;
   height: 310px;
   text-align: center;
   background-color:antiquewhite;
@@ -608,8 +606,9 @@ a:hover{
 }
 
 .gallery-item img {
-  width: 250px;
   height: 250px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .gallery-grid:hover .gallery-item{
