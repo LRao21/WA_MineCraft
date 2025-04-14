@@ -555,3 +555,68 @@ a:hover{
     background-color:rgba(106, 90, 165, 0.599);
     margin-bottom: 30px;
 }
+
+  /*----------------------------*/
+
+/*Gallery Page*/
+
+#gallery{
+  margin-top: -90px;
+  display:inline-block;
+  width: 93%;
+}
+
+#gallery h1 {
+  height: 100px;
+  text-align: center;
+  font-weight: normal;
+  background-color:rgba(106, 90, 165, 0.599);
+  margin-bottom: 30px;
+}
+
+/* Gallery */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-row-gap: 30px ;
+  grid-column-gap: 30px ;
+  justify-items: center;
+  align-items: start;
+  justify-content: space-between;
+  width: 850px;
+  height: 950px;
+  margin-bottom: 100px;
+  margin-right: 80px;
+  margin-left: 15px;
+}
+              
+.gallery-item {
+  width: 300px; 
+  height: 310px;
+  text-align: center;
+  background-color:antiquewhite;
+  padding-top: 15px;
+} 
+
+.gallery-item p {
+  margin: .25em 0;
+  line-height: 135%;
+  font-size: 17px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+}
+
+.gallery-item img {
+  width: 250px;
+  height: 250px;
+}
+
+.gallery-grid:hover .gallery-item{
+  filter: blur(5px);
+}
+
+.gallery-grid .gallery-item:hover {
+  filter: blur(0px);
+}
+/*----------------------------*/
