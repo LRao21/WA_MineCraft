@@ -620,3 +620,38 @@ a:hover{
   filter: blur(0px);
 }
 /*----------------------------*/
+
+/* About */
+
+#about {
+  display:inline-block;
+}
+
+.team-grid{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  width: 100%;
+  align-items: center;
+}
+.team_member{
+  width: 98%;
+  height: 450px;
+  margin-bottom: 20px;
+  margin-left: 4px;
+  background-color: antiquewhite;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.team_member img{
+  width: 140px;
+  height: 200px;
+  margin: 10px;
+  margin-top: 20px;
+  float: left;
+}
+
+.team_member p {
+  margin-right: 10px;
+  margin-left: 10px;
+}
