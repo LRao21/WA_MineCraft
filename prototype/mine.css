@@ -586,8 +586,9 @@ a:hover{
   width: 850px;
   margin-bottom: 100px;
   margin-right: 80px;
+  text-align: center;
 }
-              
+            
 .gallery-item {
   width: 600px;
   height: 310px;
