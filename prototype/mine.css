@@ -1,6 +1,5 @@
 /* General Structure (Base) */
 body {
-    /* background: rgb(23, 23, 54); */
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover; 
@@ -9,6 +8,7 @@ body {
     line-height: 150%;
     font-family: 'Calibri', sans-serif;    
 }
+
 .title {
     background: transparent;
     height: 400px;
@@ -87,9 +87,14 @@ body {
     margin: auto;
     padding-top: 200px;
     padding-bottom: 50px;
+    padding-left: 40px;
+    padding-right: 40px;
     align-items: center;
     /* margin-top: 160px; */
-    width: 90%;
+    width: 80%;
+    min-width: 900px;
+    max-width: 1500px;
+
 }
 
 #home {
@@ -109,15 +114,15 @@ body {
     z-index: 1;
 }
 
-main {
-    /* background: rgb(220, 237, 246); */
+.main {
     padding-left: 40px;
     padding-right: 40px;
     align-items: center;
     min-height: 800px;
+    min-width: 1000px;
 }
 
-footer {
+.footer {
     background: rgb(40, 40, 78);
     text-align: center;
     font-size: 16px;
@@ -125,10 +130,10 @@ footer {
     width: 100%;
     z-index:2;
 }
-footer p {
+.footer p {
     color: white;
 }
-footer a {
+.footer a {
     color:rgb(194, 89, 194);
 }
 
@@ -200,7 +205,7 @@ a:hover{
 }
 
 .navContainer{
-    width: 78%;
+    width: 72%;
     height: 100%;
     float:right;
 }
@@ -227,7 +232,6 @@ a:hover{
      color: rgb(125, 90, 165);
      background: rgba(214, 181, 19, 0.839);	 
 }
-
 
 #searchBar{
     border-radius: 1.5em;
@@ -441,7 +445,8 @@ a:hover{
     background-color: rgba(163, 162, 163, 0.884);
     padding: 10px 30px;
     text-align: left;
-    max-width: 700px;
+    max-width: 70%;
+    width: 700px;
     display: none;
     overflow: hidden;
   }
@@ -449,7 +454,7 @@ a:hover{
   .meta-content{
     background-color: rgba(128, 128, 128, 0.212);
     height: 100%;
-    width: 35%;
+    width: 30%;
     float:right;
     margin-top: 20px;
     padding-top: 5px;
@@ -466,12 +471,15 @@ a:hover{
     margin-bottom: 20px;
     float: left;
   }
-  .collapsible {
+  
+.collapsible {
     max-width: 760px;
     margin-bottom: -20px;
     margin-top: 20px;
     cursor: pointer;
     background-color: rgb(223, 219, 219);
+    max-width: 100%;
+    width: 760px;
   }
 
   .active, .collapsible:hover {
@@ -489,7 +497,7 @@ a:hover{
   .micro-reviews {
     background-color: rgb(135, 186, 227);
     height: 100%;
-    width: 37%;  
+    width: 30%;  
     margin-top: -108px;
     margin-bottom: 20px;
     float: right;  
@@ -530,7 +538,7 @@ a:hover{
     display: none;
   }
 
-  .micro-item h4:hover ~ p {
+  .micro-item:hover p {
     display: inline-block;
   }
 
@@ -545,7 +553,7 @@ a:hover{
 #about{
     margin-top: -90px;
     display:inline-block;
-    width: 93%;
+    width: 100%;
 }
 
 #about h1 {
@@ -563,7 +571,7 @@ a:hover{
 #gallery{
   margin-top: -90px;
   display:inline-block;
-  width: 93%;
+  width: 100%;
 }
 
 #gallery h1 {
@@ -583,14 +591,17 @@ a:hover{
   justify-items: center;
   align-items: start;
   justify-content: space-between;
-  width: 850px;
+  width: 800px;
+  max-width: 100%;
   margin-bottom: 100px;
-  margin-right: 80px;
+  margin-right: 90px;
+  margin-left: -5px;
   text-align: center;
 }
             
 .gallery-item {
-  width: 600px;
+  width: 580px;
+  max-width: 100%;
   height: 310px;
   text-align: center;
   background-color:antiquewhite;
@@ -626,7 +637,7 @@ a:hover{
 #about {
   margin-top: -90px;
   display:inline-block;
-  width: 93%;
+  width: 100%;
 }
 
 .team-grid{
@@ -638,7 +649,7 @@ a:hover{
 
 .team_member{
   width: 98%;
-  height: 450px;
+  height: 500px;
   margin-bottom: 20px;
   margin-left: 4px;
   background-color: antiquewhite;
