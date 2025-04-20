@@ -33,18 +33,18 @@
 			<h1> Reviews</h1>
 			<section class="filters">
 				<div class = "optionsContainer">
-					<button class="filterButton">Reset</button>
-					<button class="filterButton">Order by Date</button>
-					<button class="filterButton">Order by Title</button>
+					<button class="filterButton" onclick = "restoreAllReviews()">Reset</button>
+					<button class="filterButton" onclick = "sortByDate()">Order by Date</button>
+					<button class="filterButton" onclick = "sortByName()">Order by Title</button>
 					<div class = "dropdown">
 						<button class="dropDownFilter">Filter By Tag</button>
 						<div id="filters" class="dropdown-content">
-							<p>In-Game Structures</p>
-							<p>Village Structures</p>
-							<p>Minecraft Resources</p>
-							<p>Minecraft Features</p>
-							<p>In-Game Experiences</p>
-							<p>Tutorial Experiences</p>
+							<p onclick = "removeNotInGame()">In-Game Structures</p>
+							<p onclick = "removeNotVillage()">Village Structures</p>
+							<p onclick = "removeNotResource()">Minecraft Resources</p>
+							<p onclick = "removeNotFeatures()">Minecraft Features</p>
+							<p onclick = "removeNotExperience()">In-Game Experiences</p>
+							<p onclick = "removeNotTutorial()">Tutorial Experiences</p>
 						</div>
 					</div>
 				</div>
@@ -115,11 +115,11 @@
 							<table class = "context">
 								<tr>
 								<th>Tags</th>
-								<td><p>Minecraft Resources</p></td>
+								<td><p class = "Minecraft_Resources">Minecraft Resources</p></td>
 								</tr>
 								<tr>
 									<th>Date</th>
-									<td>March 26, 2025</td>
+									<td class = "date">03/26/2025</td>
 								</tr>
 								<tr>
 									<th>Item Data</th>
@@ -204,11 +204,11 @@
 							<table class = "context">
 								<tr>
 								<th>Tags</th>
-								<td><p>Village Structures</p><p>In-Game Structures</p></td>
+								<td><p class = "Village_Structures">Village Structures</p><p class = "In-Game_Structures">In-Game Structures</p></td>
 								</tr>
 								<tr>
 									<th>Date</th>
-									<td>March 26, 2025</td>
+									<td class = "date">03/26/2025</td>
 								</tr>
 								<tr>
 									<th>Item Data</th>
@@ -263,7 +263,6 @@
 					</div>
 				</div>
 			</section>
-			<script src="scripts.js"></script>
 		</main>
 	</div> 
 	<footer class = "footer">
@@ -274,5 +273,7 @@
 		<p>Privacy Policy </p>
 		<p>Terms and Conditions</p>
 	  </footer> 
+
+	  <script src="scripts.js"></script>
   </body>
 </html>

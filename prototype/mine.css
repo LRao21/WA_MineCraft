@@ -468,11 +468,12 @@ a:hover{
 /*Reviews*/
 .reviewContainer {
   grid-area: review;
-  min-width: 700px;
+  min-width: 750px;
 }
 
 .aReview{
   margin-bottom: 20px;
+  width:100%;
 }
 
 /* review content*/
