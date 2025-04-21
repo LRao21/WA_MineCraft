@@ -1,3 +1,75 @@
+let mouseHovering = false;
+document.addEventListener("mousedown", () => mouseHovering = true);
+document.addEventListener("mouseup", () => mouseHovering = false);
+let newestCells = [];
+
+let newest = (document.getElementsByClassName("emptyGrid")[0]).getElementsByTagName("div")[0];
+
+//creates grid given input for width and height
+function calculateGrid() {
+    let height = parseInt(document.getElementById("height").value,10);
+    let width = parseInt(document.getElementById("width").value,10);
+    try{
+        if (isNaN(width)) {
+            alert("You must enter a width");
+            return false;
+        } else if (width===0){
+            alert("You must enter a width");
+            return false;
+        } else if (width > 28){
+            alert("Please enter a smaller width or the grid won't fit!");
+            return false;
+        }
+        if (isNaN(height)) {
+            alert("You must enter a height");
+            return false;
+        } else if (height===0){
+            alert("You must enter a height");
+            return false;
+        } else if (height > 30){
+            alert("Please enter a smaller height or the grid won't fit!");
+            return false;
+        }
+    } catch (err){
+        alert("error: " + err.message);
+        return false;
+    }
+    var newGridFor = document.getElementsByClassName("emptyGrid")[0];
+    newGridFor.innerHTML = "";
+    for (var i = 0; i < height; i++) {
+         var row = document.createElement("div");
+        row.className = "row";
+        newGridFor.appendChild(row);
+  
+        for (var j = 0; j < width; j++) {
+        var col = document.createElement("div");
+          col.className = "col";
+        //   col.addEventListener("click", function() {
+        //     this.style.backgroundColor = 
+        //     (this.style.backgroundColor === "red") ? "white" : "red";
+        //     });
+        col.addEventListener("mousedown", function() {
+            (this.style.backgroundColor === "red") ? "white" : "red";
+            newestCells.push(this);
+        });
+        col.addEventListener("mouseover", function(e) {
+            e.preventDefault()
+            if (mouseHovering) {
+                this.style.backgroundColor = "red";
+                newestCells.push(this);
+            }
+            });
+          row.appendChild(col);
+        }
+      }
+    return false;
+  }
+
+//undos most recent activity in the grid
+function undoLast(){
+    var mostRecent = newestCells.remove()
+}
+
 //filters reviews to keep only those from the "Minecraft Resources" category
 function removeNotResource(){
     var allReviews = document.getElementsByClassName("aReview");

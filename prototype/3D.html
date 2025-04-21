@@ -28,11 +28,29 @@
 			<input type="text" id="searchBar" name="searchBar" placeholder="  Search">
 		</nav>
     </header>
-    <div class="wrapper">
-	<main>
-    </main>
+    <div class="wrapper" id = "experiment">
+		<main>
+			<div class = "expContainer">
+				<h1> Experiment!</h1>
+				<h3>Welcome, _____ </h3>
+				<div class = "fileNavigation">
+					<p>Build Path:</p>
+				</div>
+				<div class = "planGrid">
+					<label for="width">Width (blocks)</label><br>
+					<input type="text" id="width" name="width" value="0"><br>
+					<label for="height">Height (blocks)</label><br>
+					<input type="text" id="height" name="height" value="0">
+					<button onclick = "calculateGrid()">Create Landscape</button>
+				</div>
+				<div class = "gridInfor">
+					<p>Tip:</p>
+				</div>
+				<div class = "emptyGrid"></div>
+			</div>
+		</main>
 	</div> 
-	<footer class = "footer">
+	  <footer class = "footer">
 		<p>&copy; 2025 by MineCraft_CrossRoads. All rights reserved.</p>
 		<a href = "https://www.linkedin.com/in/lavanya-rao-512988290/" target = "_blank">Linkedin</a>
 		<a href = "https://github.com/LRao21" target = "_blank">Github</a>
@@ -40,6 +58,6 @@
 		<p>Privacy Policy </p>
 		<p>Terms and Conditions</p>
 	  </footer> 
-	  <script src="myScript.js"></script>
+	  <script src="scripts.js"></script>
   </body>
 </html>

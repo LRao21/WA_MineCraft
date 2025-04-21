@@ -744,3 +744,72 @@ a:hover{
   padding-bottom: 10px;
   padding-left: 5px;
 }
+
+/*---------------------------*/
+
+/*Experiment*/
+
+#experiment{
+  padding:110px;
+}
+
+#experiment main{
+  display: inline-block;
+}
+
+.expContainer{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-areas:
+  "title title title title title"
+  "user grid grid grid grid"
+  "tip grid grid grid grid"
+  "tip grid grid grid grid"
+  "file grid grid grid grid"
+  "file grid grid grid grid"
+  "size grid grid grid grid";
+}
+
+#experiment h1 {
+  grid-area: title;
+  height: 100px;
+  text-align: center;
+  font-weight: normal;
+  background-color:rgba(106, 90, 165, 0.599);
+  margin-bottom: 30px;
+}
+
+#experiment h3 {
+  grid-area: user;
+}
+
+.planGrid{
+  grid-area: size;
+}
+
+.gridInfor{
+  grid-area: tip;
+}
+
+.emptyGrid {
+  grid-area: grid;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  gap: 2px;
+}
+
+.col {
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border: 1px solid gray;
+  cursor: pointer;
+}
+
