@@ -32,19 +32,25 @@
 		<main>
 			<div class = "expContainer">
 				<h1> Experiment!</h1>
-				<h3>Welcome, _____ </h3>
-				<div class = "fileNavigation">
-					<p>Build Path:</p>
+				<div class = "controlBar">
+					<button onclick = "undoLast()">Remove Most Recent Change</button>
+					<button onclick = "resetGrid()">Reset Grid to Blank</button>
+					<div class = "scale"></div>
 				</div>
+				<h3>Welcome, _____ </h3>
 				<div class = "planGrid">
 					<label for="width">Width (blocks)</label><br>
 					<input type="text" id="width" name="width" value="0"><br>
 					<label for="height">Height (blocks)</label><br>
 					<input type="text" id="height" name="height" value="0">
 					<button onclick = "calculateGrid()">Create Landscape</button>
+					<br>
 				</div>
 				<div class = "gridInfor">
 					<p>Tip:</p>
+				</div>
+				<div class = "fileNavigation">
+					<p>Build Path:</p>
 				</div>
 				<div class = "emptyGrid"></div>
 			</div>

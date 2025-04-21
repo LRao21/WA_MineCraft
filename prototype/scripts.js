@@ -3,8 +3,6 @@ document.addEventListener("mousedown", () => mouseHovering = true);
 document.addEventListener("mouseup", () => mouseHovering = false);
 let newestCells = [];
 
-let newest = (document.getElementsByClassName("emptyGrid")[0]).getElementsByTagName("div")[0];
-
 //creates grid given input for width and height
 function calculateGrid() {
     let height = parseInt(document.getElementById("height").value,10);
@@ -13,21 +11,21 @@ function calculateGrid() {
         if (isNaN(width)) {
             alert("You must enter a width");
             return false;
-        } else if (width===0){
+        } else if (width<=0){
             alert("You must enter a width");
             return false;
-        } else if (width > 28){
-            alert("Please enter a smaller width or the grid won't fit!");
+        } else if (width > 40){
+            alert("Please enter a smaller width (<40) or the grid won't fit!");
             return false;
         }
         if (isNaN(height)) {
             alert("You must enter a height");
             return false;
-        } else if (height===0){
+        } else if (height<=0){
             alert("You must enter a height");
             return false;
-        } else if (height > 30){
-            alert("Please enter a smaller height or the grid won't fit!");
+        } else if (height > 40){
+            alert("Please enter a smaller height (<40) or the grid won't fit!");
             return false;
         }
     } catch (err){
@@ -67,7 +65,8 @@ function calculateGrid() {
 
 //undos most recent activity in the grid
 function undoLast(){
-    var mostRecent = newestCells.remove()
+    var mostRecent = newestCells.pop();
+    (mostRecent.style.backgroundColor === "red") ? "white" : "red";
 }
 
 //filters reviews to keep only those from the "Minecraft Resources" category
