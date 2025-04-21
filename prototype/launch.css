@@ -1,0 +1,13 @@
+body {
+    margin: 0;
+    overflow-x: hidden;
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; 
+    background-image: linear-gradient(to bottom, transparent, transparent),  url('images/night.jpg');    
+    
+    font-size: 18px;
+    line-height: 150%;
+    font-family: 'Calibri', sans-serif;    
+}
