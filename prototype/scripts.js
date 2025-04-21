@@ -5,6 +5,7 @@ let newestCells = [];
 
 //creates grid given input for width and height
 function calculateGrid() {
+    let scale = parseInt(document.getElementById("scale").value,10);
     let height = parseInt(document.getElementById("height").value,10);
     let width = parseInt(document.getElementById("width").value,10);
     try{
@@ -14,8 +15,8 @@ function calculateGrid() {
         } else if (width<=0){
             alert("You must enter a width");
             return false;
-        } else if (width > 40){
-            alert("Please enter a smaller width (<40) or the grid won't fit!");
+        } else if ((800*scale)/width < 21){
+            alert("Please enter a smaller width or the grid won't fit!");
             return false;
         }
         if (isNaN(height)) {
@@ -24,8 +25,15 @@ function calculateGrid() {
         } else if (height<=0){
             alert("You must enter a height");
             return false;
-        } else if (height > 40){
-            alert("Please enter a smaller height (<40) or the grid won't fit!");
+        } else if ((800*scale)/height < 21){
+            alert("Please enter a smaller height or the grid won't fit!");
+            return false;
+        }
+        if (isNaN(scale)) {
+            alert("You must enter a scale");
+            return false;
+        } else if (scale<=0){
+            alert("You must enter a scale");
             return false;
         }
     } catch (err){
@@ -34,27 +42,28 @@ function calculateGrid() {
     }
     var newGridFor = document.getElementsByClassName("emptyGrid")[0];
     newGridFor.innerHTML = "";
-    for (var i = 0; i < height; i++) {
+    for (var i = 0; i < height/scale; i++) {
          var row = document.createElement("div");
         row.className = "row";
         newGridFor.appendChild(row);
   
-        for (var j = 0; j < width; j++) {
+        for (var j = 0; j < (width/scale); j++) {
         var col = document.createElement("div");
           col.className = "col";
-        //   col.addEventListener("click", function() {
-        //     this.style.backgroundColor = 
-        //     (this.style.backgroundColor === "red") ? "white" : "red";
-        //     });
-        col.addEventListener("mousedown", function() {
+          col.style.width = String(800/(width/scale)) + "px";
+          col.style.height = String(800/(width/scale)) + "px";
+          col.addEventListener("click", function() {
+            this.style.backgroundColor = 
             (this.style.backgroundColor === "red") ? "white" : "red";
-            newestCells.push(this);
-        });
+            });
+        // col.addEventListener("mousedown", function() {
+        //     (this.style.backgroundColor === "red") ? "white" : "red";
+        //     newestCells.push(this);
+        // });
         col.addEventListener("mouseover", function(e) {
             e.preventDefault()
             if (mouseHovering) {
                 this.style.backgroundColor = "red";
-                newestCells.push(this);
             }
             });
           row.appendChild(col);
