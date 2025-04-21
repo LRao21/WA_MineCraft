@@ -1,3 +1,4 @@
+//filters reviews to keep only those from the "Minecraft Resources" category
 function removeNotResource(){
     var allReviews = document.getElementsByClassName("aReview");
     for (var i=0; i < allReviews.length; i++){
@@ -16,6 +17,7 @@ function removeNotResource(){
     }
 }
 
+//filters reviews to keep only those from the "Village Structures" category
 function removeNotVillage(){
     var allReviews = document.getElementsByClassName("aReview");
     for (var i=0; i < allReviews.length; i++){
@@ -34,6 +36,7 @@ function removeNotVillage(){
     }
 }
 
+//filters reviews to keep only those from the "In-Game Structures" category
 function removeNotInGame(){
     var allReviews = document.getElementsByClassName("aReview");
     for (var i=0; i < allReviews.length; i++){
@@ -52,6 +55,7 @@ function removeNotInGame(){
     }
 }
 
+//filters reviews to keep only those from the "Minecraft Features" category
 function removeNotFeatures(){
     var allReviews = document.getElementsByClassName("aReview");
     for (var i=0; i < allReviews.length; i++){
@@ -70,6 +74,7 @@ function removeNotFeatures(){
     }
 }
 
+//filters reviews to keep only those from the "In-Game Experiences" category
 function removeNotExperience(){
     var allReviews = document.getElementsByClassName("aReview");
     for (var i=0; i < allReviews.length; i++){
@@ -88,7 +93,7 @@ function removeNotExperience(){
     }
 }
 
-
+//filters reviews to keep only those from the "Tutorial Experiences" category
 function removeNotTutorial(){
     var allReviews = document.getElementsByClassName("aReview");
     for (var i=0; i < allReviews.length; i++){
@@ -107,6 +112,7 @@ function removeNotTutorial(){
     }
 }
 
+//function to reset order of reviews back to OG (order of ids)
 function restoreAllReviews(){
     var allReviews = Array.from(document.getElementsByClassName("aReview"));
     allReviews.sort(function(i,j){
@@ -126,6 +132,7 @@ function restoreAllReviews(){
     }   
 }
 
+//helper function to make date objects from the strings in the meta-content tables
 function makeDate(dateMMDDYYYY){
     var month = parseInt(dateMMDDYYYY.split("/")[0],10)-1;
     var day = parseInt(dateMMDDYYYY.split("/")[1],10);
@@ -134,6 +141,7 @@ function makeDate(dateMMDDYYYY){
     return new Date(year,month,day);
 }
 
+//sorting function for the reviews; sorts them in chronological order (newest first)
 function sortByDate(){
     var allReviews = Array.from(document.getElementsByClassName("aReview"));
     allReviews.sort(function(i,j){
@@ -141,9 +149,9 @@ function sortByDate(){
        var second = makeDate(j.querySelector("td.date").textContent);
 
         if (first < second){
-            return -1;
-        } else if (first > second){
             return 1;
+        } else if (first > second){
+            return -1;
         } else {
             return 0;
         }
@@ -157,6 +165,7 @@ function sortByDate(){
     
 }
 
+//sorting function for the reviews; sorts them in alphabetical order
 function sortByName(){
     var allReviews = Array.from(document.getElementsByClassName("aReview"));
     allReviews.sort(function(i,j){
@@ -177,5 +186,4 @@ function sortByName(){
         parent.appendChild(allReviews[k]);
         allReviews[k].style.display = "inline-block";
     }   
-    
 }
