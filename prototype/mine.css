@@ -838,7 +838,6 @@ a:hover{
   margin-top: -100px;
 }
 
-
 .row {
   display: flex;
   gap: 2px;
@@ -852,3 +851,35 @@ a:hover{
   cursor: pointer;
 }
 
+/*---------------------------*/
+
+/*Map*/
+
+#mapPage{
+  padding-top: 110px;
+}
+
+#mapPage main{
+  display:inline-block;
+  min-width:100%;
+}
+
+#mapPage h1 {
+  height: 100px;
+  text-align: center;
+  font-weight: normal;
+  background-color:rgba(106, 90, 165, 0.599);
+  margin-bottom: 30px;
+}
+
+.mapVillage{
+  background-image: linear-gradient(to bottom, transparent, transparent),  url('images/sample_village_map.png'); 
+  background-repeat: no-repeat;
+  width: 98%;
+  height: 900px;
+  transform: rotate(90deg); 
+  margin-top: 20%;  
+  position: relative;
+  top:0;
+  left: 0;
+}
