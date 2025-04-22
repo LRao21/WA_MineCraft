@@ -56,15 +56,17 @@ function calculateGrid() {
             this.style.backgroundColor = 
             (this.style.backgroundColor === "red") ? "white" : "red";
             });
-        // col.addEventListener("mousedown", function() {
-        //     (this.style.backgroundColor === "red") ? "white" : "red";
-        //     newestCells.push(this);
-        // });
-        col.addEventListener("mouseover", function(e) {
+          col.addEventListener("mouseover", function(e) {
             e.preventDefault()
             if (mouseHovering) {
                 this.style.backgroundColor = "red";
             }
+            });
+          col.addEventListener('dblclick', function() {
+            
+            alert('Double click detected!');
+            this.style.backgroundColor = 
+            (this.style.backgroundColor === "red") ? "white" : "red";
             });
           row.appendChild(col);
         }
@@ -75,7 +77,7 @@ function calculateGrid() {
 //undos most recent activity in the grid
 function undoLast(){
     var mostRecent = newestCells.pop();
-    (mostRecent.style.backgroundColor === "red") ? "white" : "red";
+    this.style.backgroundColor = (this.style.backgroundColor === "red") ? "white" : "red";
 }
 
 //filters reviews to keep only those from the "Minecraft Resources" category
