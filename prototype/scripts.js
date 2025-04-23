@@ -182,8 +182,8 @@ function calculateGrid() {
         if (isNaN(scale)) {
             alert("You must enter a scale");
             return false;
-        } else if (scale<=0){
-            alert("You must enter a scale");
+        } else if (scale<1){
+            alert("You must enter a scale of at least 1");
             return false;
         }
     } catch (err){
@@ -249,6 +249,11 @@ function calculateGrid() {
             row.appendChild(col);
         }
       }
+      var copy = copyGrid(newGridFor.children.length, newGridFor.children[0].children.length, 1, newGridFor);
+        if (lastFive.length >= 5){
+            var old = lastFive.pop();
+        }
+        lastFive.push(copy);
     return false;
   }
 
