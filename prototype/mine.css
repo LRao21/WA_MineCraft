@@ -247,6 +247,7 @@ a:hover{
   padding-left: 70px;
   margin-bottom: 4%;
   animation: fadeIntoView 7s;
+  align-items: center;
 }
 
 @keyframes fadeIntoView {
@@ -285,13 +286,15 @@ a:hover{
   text-align: center;
   font-weight: 700;
   font-size: 30px;
+  margin: auto;
   margin-bottom: 100px;
   /* padding-left: 60px; */
   /* padding-right: 60px; */
   padding-bottom: 20px;
   margin-top: 60px;
   font-family: "Arial";
-  width: 100%;
+  line-height: 150%;
+  width: 60%;
 }
 
 .title p:hover{
@@ -879,7 +882,32 @@ a:hover{
   height: 900px;
   transform: rotate(90deg); 
   margin-top: 20%;  
-  position: relative;
-  top:0;
-  left: 0;
 }
+
+/* #smallHouse1{
+  transform: rotate(-90deg); 
+  position: relative;
+  top:70;
+  left: 700;
+}
+
+#smallHouse2{
+  transform: rotate(-90deg); 
+  position: relative;
+  top:555px;
+  left: 403px;
+}
+
+#medHouse1{
+  transform: rotate(-90deg); 
+  position: relative;
+  top:-660px;
+  left: -150px;
+}
+
+#blacksmith{
+  transform: rotate(-90deg); 
+  position: relative;
+  top:-649px;
+  left: -172px;
+} */
