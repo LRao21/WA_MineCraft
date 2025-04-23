@@ -2,9 +2,159 @@ let mouseHovering = false;
 document.addEventListener("mousedown", () => mouseHovering = true);
 document.addEventListener("mouseup", () => mouseHovering = false);
 let newestCells = [];
+let neighboringCells = [];
+let lastFive = [];
+
+/* FOR GRID */
+function saveLayer(){
+    return false;
+}
+
+function undoLast(){
+    var toRestore;
+    if (lastFive.length === 0){
+        console.log("nothing to restore");
+        return false;
+    }
+    toRestore = lastFive.pop();
+    if (lastFive.length > 0){ 
+        toRestore = lastFive.pop();
+    }
+    
+    if (toRestore!= null && toRestore.children!=null && toRestore.children[0]!=null){
+        console.log("got Last!")
+        console.log("Height: " + String((toRestore.children).length))
+        console.log("Width: " + String((toRestore.children[0].children).length))
+
+        var newGridFor = document.getElementsByClassName("emptyGrid")[0];
+        var rows = newGridFor.children;
+        for (var i = 0; i < rows.length; i++){
+            var cells = rows[i].children;
+            var ogRows = toRestore.children;
+            var ogCells = ogRows[i].children;
+            for (var j = 0; j < cells.length; j++){
+                cells[j].style.backgroundColor = 
+                ogCells[j].style.backgroundColor;
+            }
+        }
+    }
+    return false;
+}
+
+function resetGrid(){
+    var newGridFor = document.getElementsByClassName("emptyGrid")[0];
+    var rows = newGridFor.children;
+    for (var i = 0; i < rows.length; i++){
+        var cells = rows[i].children;
+        for (var j = 0; j < cells.length; j++){
+            if (cells[j].style.backgroundColor != "white"){
+                cells[j].style.backgroundColor = "white";
+            }
+        }
+    }
+    var copy = copyGrid(rows.length, rows[0].children.length, 1, newGridFor);
+    if (lastFive.length >= 5){
+        var old = lastFive.pop();
+    }
+    lastFive.push(copy);
+    return false;
+}
+
+//helper function to find other cells in an object
+function findNeighbors(toPopulate, grid, width, height, scale, col, color){
+    var rowCount = Math.floor(height/scale);
+    var colCount = Math.floor(width/scale);
+
+    var colLocal = Math.floor((parseInt(col.id,10) % colCount)); //tells me which column a cell is
+    var rowLocal = Math.floor(((parseInt(col.id))/rowCount)); //tells me which row a cell is in
+    console.log("rowCount: " + String(rowCount));
+    console.log("colCount: " + String(colCount));
+    console.log("rowLocal: " + String(rowLocal));
+    console.log("colLocal: " + String(colLocal));
+
+        var rightNeighbor = col;
+        var lefttNeighbor = col;
+        var topNeighbor = col;
+        var bottomNeighbor = col;
+        if (colLocal + 1 <= colCount -1){
+            rightNeighbor = document.getElementById(String(parseInt(col.id)+1));
+        }
+        if (colLocal -1 >= 0){
+            lefttNeighbor = document.getElementById(String(parseInt(col.id)-1));
+        }
+        if (rowLocal -1 >= 0){
+            topNeighbor = document.getElementById(String(parseInt(col.id)-colCount));
+        }
+        if (rowLocal + 1 <= rowCount -1){
+            bottomNeighbor = document.getElementById(String(parseInt(col.id)+colCount));
+        }
+
+        console.log("found neighbors!");
+        console.log("col id: " + String(col.id));
+        console.log("right id: " + String(rightNeighbor.id));
+        console.log("left id: " + String(lefttNeighbor.id));
+        console.log("top id: " + String(topNeighbor.id));
+        console.log("bottom id: " + String(bottomNeighbor.id));
+
+        if (rightNeighbor!=null && rightNeighbor.style.backgroundColor === color){
+            if (!toPopulate.includes(rightNeighbor.id)){
+                toPopulate.push(rightNeighbor.id);
+                console.log("right is a match!");
+                findNeighbors(toPopulate, grid, width, height, scale, rightNeighbor, color);
+            }
+        }
+        if (lefttNeighbor!=null && lefttNeighbor.style.backgroundColor === color){
+            if (!toPopulate.includes(lefttNeighbor.id)){
+                toPopulate.push(lefttNeighbor.id);
+                console.log("left is a match!");
+                findNeighbors(toPopulate, grid, width, height, scale, lefttNeighbor, color);
+            }
+        }
+        if (topNeighbor!=null && topNeighbor.style.backgroundColor === color){
+            if (!toPopulate.includes(topNeighbor.id)){
+                toPopulate.push(topNeighbor.id);
+                console.log("top is a match!");
+                findNeighbors(toPopulate, grid, width, height, scale, topNeighbor, color);
+            }
+        }
+        if (bottomNeighbor!=null && bottomNeighbor.style.backgroundColor === color){
+            if (!toPopulate.includes(bottomNeighbor.id)){
+                toPopulate.push(bottomNeighbor.id);
+                console.log("bottom is a match!");
+                findNeighbors(toPopulate, grid, width, height, scale, bottomNeighbor, color);
+            }
+        }
+        return false;
+    }
+
+//helper function to copy the grid so we can save frames
+function copyGrid(height, width, scale){
+    var newGrid = document.createElement("div");
+    var index = 0
+    for (var i = 0; i < height/scale; i++) {
+        var row = document.createElement("div");
+        row.className = "row";
+        newGrid.appendChild(row);
+  
+        for (var j = 0; j < (width/scale); j++) {
+          var col = document.createElement("div");
+          col.className = "col";
+          col.id = String(index);
+          index = index + 1;
+          //sets cell size to fill the full frame always
+          col.style.width = String(800/(width/scale)) + "px";
+          col.style.height = String(800/(width/scale)) + "px";
+          var ogCell = document.getElementById(String(col.id));
+          col.style.backgroundColor = ogCell.style.backgroundColor;
+          row.appendChild(col);
+        }
+    }
+    return newGrid;
+}
 
 //creates grid given input for width and height
 function calculateGrid() {
+    lastFive = [];
     let scale = parseInt(document.getElementById("scale").value,10);
     let height = parseInt(document.getElementById("height").value,10);
     let width = parseInt(document.getElementById("width").value,10);
@@ -42,6 +192,7 @@ function calculateGrid() {
     }
     var newGridFor = document.getElementsByClassName("emptyGrid")[0];
     newGridFor.innerHTML = "";
+    var index = 0
     for (var i = 0; i < height/scale; i++) {
          var row = document.createElement("div");
         row.className = "row";
@@ -50,35 +201,59 @@ function calculateGrid() {
         for (var j = 0; j < (width/scale); j++) {
         var col = document.createElement("div");
           col.className = "col";
+          col.id = String(index);
+          index = index + 1;
+          //sets cell size to fill the full frame always
           col.style.width = String(800/(width/scale)) + "px";
           col.style.height = String(800/(width/scale)) + "px";
+          //event listeners for clicks
           col.addEventListener("click", function() {
             this.style.backgroundColor = 
             (this.style.backgroundColor === "red") ? "white" : "red";
+            var copy = copyGrid(height, width, scale, newGridFor);
+            if (lastFive.length >= 5){
+                var old = lastFive.pop();
+            }
+            lastFive.push(copy);
             });
           col.addEventListener("mouseover", function(e) {
             e.preventDefault()
             if (mouseHovering) {
                 this.style.backgroundColor = "red";
+                var copy = copyGrid(height, width, scale, newGridFor);
+                if (lastFive.length >= 5){
+                    var old = lastFive.pop();
+                }                
+                lastFive.push(copy);
             }
             });
           col.addEventListener('dblclick', function() {
-            
             alert('Double click detected!');
-            this.style.backgroundColor = 
-            (this.style.backgroundColor === "red") ? "white" : "red";
+            this.style.backgroundColor = "red";
+            neighboringCells = [];
+            findNeighbors(neighboringCells, newGridFor, width, height, scale,
+                this, this.style.backgroundColor);
+            console.log("done!");
+            this.style.backgroundColor = "blue";
+            for (var k = 0; k < neighboringCells.length; k++){
+                document.getElementById(neighboringCells[k]).style.backgroundColor = "blue";
+                console.log("colored!");
+            }
+            var copy = copyGrid(height, width, scale, newGridFor);
+            if (lastFive.length >= 5){
+                var old = lastFive.pop();
+            }
+            lastFive.push(copy);
             });
-          row.appendChild(col);
+            col.style.backgroundColor = "white";
+            row.appendChild(col);
         }
       }
     return false;
   }
 
-//undos most recent activity in the grid
-function undoLast(){
-    var mostRecent = newestCells.pop();
-    this.style.backgroundColor = (this.style.backgroundColor === "red") ? "white" : "red";
-}
+
+/* FOR REVIEWS */
 
 //filters reviews to keep only those from the "Minecraft Resources" category
 function removeNotResource(){
