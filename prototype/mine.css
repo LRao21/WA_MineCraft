@@ -884,30 +884,45 @@ a:hover{
   margin-top: 20%;  
 }
 
-/* #smallHouse1{
+.mapVillage p{
+  background-color: wheat;
+  width: 200px;
+  border-radius: 1.5em;
+  visibility: hidden;
+}
+
+.mapVillage div{
+  width: 200px;
+}
+
+.mapVillage div:hover p{
+  visibility: visible;
+}
+
+#smallHouse1{
   transform: rotate(-90deg); 
   position: relative;
-  top:70;
-  left: 700;
+  top:525px;
+  left: 430px;
 }
 
 #smallHouse2{
   transform: rotate(-90deg); 
   position: relative;
-  top:555px;
-  left: 403px;
+  top: 263px;
+  left: 387px;
 }
 
 #medHouse1{
   transform: rotate(-90deg); 
   position: relative;
-  top:-660px;
-  left: -150px;
+  top:-40px;
+  left: 515px;
 }
 
 #blacksmith{
   transform: rotate(-90deg); 
   position: relative;
-  top:-649px;
-  left: -172px;
-} */
+  top:-30px;
+  left: 450px;
+} 
