@@ -1,12 +1,24 @@
 let mouseHovering = false;
 document.addEventListener("mousedown", () => mouseHovering = true);
 document.addEventListener("mouseup", () => mouseHovering = false);
+
 let newestCells = [];
 let neighboringCells = [];
 let lastTen = [];
 
+let users = {};
+let user = ""; //current person
+let pw = "";
+
+let temp = "";
+
 /* FOR GRID */
 function saveLayer(){
+    if (user===""){
+        alert("Sign in to save your work!");
+        return false;
+    }
+
     return false;
 }
 
