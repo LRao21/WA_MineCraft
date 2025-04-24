@@ -3,7 +3,7 @@ document.addEventListener("mousedown", () => mouseHovering = true);
 document.addEventListener("mouseup", () => mouseHovering = false);
 let newestCells = [];
 let neighboringCells = [];
-let lastFive = [];
+let lastTen = [];
 
 /* FOR GRID */
 function saveLayer(){
@@ -11,14 +11,19 @@ function saveLayer(){
 }
 
 function undoLast(){
+    var newGridFor = document.getElementsByClassName("emptyGrid")[0];
+    var rows = newGridFor.children;
+
     var toRestore;
-    if (lastFive.length === 0){
+    if (lastTen.length === 0){
         console.log("nothing to restore");
+        var blankSet = blankGrid(rows.length, rows[0].children.length, 1);
+        lastTen.push(blankSet);
         return false;
     }
-    toRestore = lastFive.pop();
-    if (lastFive.length > 0){ 
-        toRestore = lastFive.pop();
+    toRestore = lastTen.pop();
+    if (lastTen.length > 1){ 
+        toRestore = lastTen.pop();
     }
     
     if (toRestore!= null && toRestore.children!=null && toRestore.children[0]!=null){
@@ -26,8 +31,6 @@ function undoLast(){
         console.log("Height: " + String((toRestore.children).length))
         console.log("Width: " + String((toRestore.children[0].children).length))
 
-        var newGridFor = document.getElementsByClassName("emptyGrid")[0];
-        var rows = newGridFor.children;
         for (var i = 0; i < rows.length; i++){
             var cells = rows[i].children;
             var ogRows = toRestore.children;
@@ -38,6 +41,7 @@ function undoLast(){
             }
         }
     }
+
     return false;
 }
 
@@ -53,10 +57,10 @@ function resetGrid(){
         }
     }
     var copy = copyGrid(rows.length, rows[0].children.length, 1, newGridFor);
-    if (lastFive.length >= 5){
-        var old = lastFive.pop();
+    if (lastTen.length >= 10){
+        var old = lastTen.pop();
     }
-    lastFive.push(copy);
+    lastTen.push(copy);
     return false;
 }
 
@@ -127,6 +131,32 @@ function findNeighbors(toPopulate, grid, width, height, scale, col, color){
         return false;
     }
 
+//helper function to create a blank grid
+function blankGrid(height, width, scale){
+    var newGrid = document.createElement("div");
+    var index = 0
+    for (var i = 0; i < height/scale; i++) {
+        var row = document.createElement("div");
+        row.className = "row";
+        newGrid.appendChild(row);
+  
+        for (var j = 0; j < (width/scale); j++) {
+          var col = document.createElement("div");
+          col.className = "col";
+          col.id = String(index);
+          index = index + 1;
+          //sets cell size to fill the full frame always
+          col.style.width = String(800/(width/scale)) + "px";
+          col.style.height = String(800/(width/scale)) + "px";
+          col.style.backgroundColor = "white";
+          row.appendChild(col);
+        }
+        console.log("height: " + String(height));
+        console.log("width: " + String(width));
+        console.log("row size: " + String(newGrid.children.length) + ",row count: " + String(i));
+    }
+    return newGrid;
+}
 //helper function to copy the grid so we can save frames
 function copyGrid(height, width, scale){
     var newGrid = document.createElement("div");
@@ -154,7 +184,7 @@ function copyGrid(height, width, scale){
 
 //creates grid given input for width and height
 function calculateGrid() {
-    lastFive = [];
+    lastTen = [];
     let scale = parseInt(document.getElementById("scale").value,10);
     let height = parseInt(document.getElementById("height").value,10);
     let width = parseInt(document.getElementById("width").value,10);
@@ -211,20 +241,20 @@ function calculateGrid() {
             this.style.backgroundColor = 
             (this.style.backgroundColor === "red") ? "white" : "red";
             var copy = copyGrid(height, width, scale, newGridFor);
-            if (lastFive.length >= 5){
-                var old = lastFive.pop();
+            if (lastTen.length >= 10){
+                var old = lastTen.pop();
             }
-            lastFive.push(copy);
+            lastTen.push(copy);
             });
           col.addEventListener("mouseover", function(e) {
             e.preventDefault()
             if (mouseHovering) {
                 this.style.backgroundColor = "red";
                 var copy = copyGrid(height, width, scale, newGridFor);
-                if (lastFive.length >= 5){
-                    var old = lastFive.pop();
+                if (lastTen.length >= 10){
+                    var old = lastTen.pop();
                 }                
-                lastFive.push(copy);
+                lastTen.push(copy);
             }
             });
           col.addEventListener('dblclick', function() {
@@ -240,20 +270,20 @@ function calculateGrid() {
                 console.log("colored!");
             }
             var copy = copyGrid(height, width, scale, newGridFor);
-            if (lastFive.length >= 5){
-                var old = lastFive.pop();
+            if (lastTen.length >= 10){
+                var old = lastTen.pop();
             }
-            lastFive.push(copy);
+            lastTen.push(copy);
             });
             col.style.backgroundColor = "white";
             row.appendChild(col);
         }
       }
-      var copy = copyGrid(newGridFor.children.length, newGridFor.children[0].children.length, 1, newGridFor);
-        if (lastFive.length >= 5){
-            var old = lastFive.pop();
+      var copy = blankGrid(height, width, scale);
+        if (lastTen.length >= 10){
+            var old = lastTen.pop();
         }
-        lastFive.push(copy);
+        lastTen.push(copy);
     return false;
   }
 
