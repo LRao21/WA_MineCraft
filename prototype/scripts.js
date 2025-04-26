@@ -18,6 +18,7 @@ function saveLayer(){
         alert("Sign in to save your work!");
         return false;
     }
+    
 
     return false;
 }
