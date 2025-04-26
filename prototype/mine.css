@@ -647,6 +647,10 @@ a:hover{
 .gallery-grid .gallery-item:hover {
   filter: blur(0px);
 }
+
+#gallery table td{
+  padding: 5px;
+}
 /*----------------------------*/
 
 /*About Page*/
