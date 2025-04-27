@@ -812,9 +812,13 @@ a:hover{
 
 #experiment h3 {
   margin: 0px;
-  grid-area: user;
+  margin-bottom: 5px;
   background-color: rgb(163, 196, 224);
-  height: 60px;
+}
+
+#greeting{
+  grid-area:user;
+  height: 70%;
 }
 
 .planGrid{
@@ -841,8 +845,48 @@ a:hover{
 .controlBar{
   grid-area: control;
   margin: 0px;
-  height: 60px;
+  height: 160px;
   background-color: rgb(163, 196, 224);
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: repeat(2,1fr);
+  grid-template-areas:
+  "reset undo save colorSpot"
+  "build . . color";
+}
+
+.controlBar button{
+  height: 50px;
+}
+
+#reset{
+  grid-area:reset;
+}
+
+#undo{
+  grid-area:undo;
+}
+
+#build{
+  width:100%;
+}
+
+.build-content{
+  grid-area:build;
+  min-height: 200px;
+  display:inline-block;
+}
+
+#build-collapse{
+  grid-area:content;
+  background-color: white;
+  display:none;
+  width:100%;
+  z-index:1;
+}
+
+.build-content:hover #build-collapse{
+  display:inline-block;
 }
 
 .emptyGrid {
@@ -854,6 +898,7 @@ a:hover{
   align-items: center;
   margin-top: -100px;
   border: 2px solid black;
+  z-index:2;
 }
 
 .row {
@@ -868,7 +913,6 @@ a:hover{
   border: 1px solid gray;
   cursor: pointer;
 }
-
 /*---------------------------*/
 
 /*Map*/
@@ -941,3 +985,4 @@ a:hover{
   top:-30px;
   left: 450px;
 } 
+

@@ -33,13 +33,24 @@
 			<div class = "expContainer">
 				<h1> Experiment!</h1>
 				<div class = "controlBar">
-					<button onclick = "resetGrid()">Reset Grid to Blank</button>
-					<button onclick = "undoLast()">Remove Most Recent Change</button>
-					<button onclick = "">Create A Build</button>
-					<button onclick = "saveLayer()">Save Your Changes</button>
+					<button id = "reset" onclick = "resetGrid()">Reset Grid to Blank</button>
+					<button id = "undo" onclick = "undoLast()">Remove Most Recent Change</button>
+					<button id = "save" onclick = "saveLayer()">Save Your Changes</button>
+					<div class = "build-content" id = "build-data">
+						<button id = "build" onclick = "">Create A Build</button> <br>
+						<div id = "build-collapse">
+							<label for="title">Build Title:</label><br>
+							<input type="text" id="title" name="title" value="Steve's Dirt House"><br>
+							<label for="type">Build Type:</label><br>
+							<input type="text" id="type" name="type" value="Lodging"><br>
+							<label for="type">Build From Group #:</label><br>
+							<input type="text" id="number" name="number" value="1"><br>
+						</div>
+					</div>
 					<div class = "scale"></div>
 				</div>
-				<h3 style = "padding-left: 10px;">Welcome, _____ </h3>
+				<div class = "emptyGrid"></div>
+				<h3 id = "greeting" style = "padding-left: 10px;">Welcome, _____ </h3>
 				<div class = "planGrid">
 					<h3>Size Your Land</h3>
 					<label for="scale">Scale (blocks to cell)</label><br>
@@ -59,7 +70,6 @@
 				<div class = "fileNavigation">
 					<h3>Build Path:</h3>
 				</div>
-				<div class = "emptyGrid"></div>
 			</div>
 		</main>
 	</div> 

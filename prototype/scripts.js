@@ -27,7 +27,7 @@ function saveLayer(){
 }
 
 //designates a group as a build, creates a build object
-function createBuild(cell){
+function createBuild(){
     var groupFocus = "";
     for (var k = 0; k < groups.length; k++){
         for (var l = 0; l < groups[k].cells.length;l++){
@@ -299,13 +299,9 @@ function calculateGrid() {
           col.style.height = String(800/(width/scale)) + "px";
           //event listeners for clicks
           col.addEventListener("click", function() {
-            if (this.style.backgroundColor === "blue"){
-                createBuild(this);
-            }
-            else {
-                this.style.backgroundColor = 
-                (this.style.backgroundColor === "red") ? "white" : "red";
-            }
+            this.style.backgroundColor = 
+            (this.style.backgroundColor === "red") ? "white" : "red";
+            
             var copy = copyGrid(height, width, scale, newGridFor);
             if (lastTen.length >= 10){
                 var old = lastTen.pop();
