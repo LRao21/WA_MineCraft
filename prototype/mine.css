@@ -326,16 +326,16 @@ a:hover{
 
 .showcase-item {
     background-color:rgb(135, 186, 227);
-    height: 400px;
+    min-height: 700px; 
     align-items: center;
     margin: 10px;
     border-radius: 1.5em;
     padding-left: 20px;
     padding-right: 20px;
-
     position: relative;
     top: 0;
     transition: top ease 0.5s;
+    display:inline-block;
 }
 
 .showcase-item:hover{
@@ -353,8 +353,14 @@ a:hover{
     text-align: center;
 }
 
+.showcase-item img{
+  border: 10px solid rgba(214, 181, 19, 0.799);
+  height: 300px;
+  width:300px;
+}
+
 .description{
-    height: 40%;
+    height: 20%;
     text-align: center;
 }
 

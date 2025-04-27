@@ -12,20 +12,48 @@ let pw = "";
 
 let temp = "";
 
+let groups = []
+let builds = [];
+
 /* FOR GRID */
 function saveLayer(){
     if (user===""){
         alert("Sign in to save your work!");
         return false;
     }
-    
+
 
     return false;
 }
 
+//designates a group as a build, creates a build object
+function createBuild(cell){
+    var groupFocus = "";
+    for (var k = 0; k < groups.length; k++){
+        for (var l = 0; l < groups[k].cells.length;l++){
+            if (groups[k].cells[i].id === cell.id){
+                groupFocus = groups[k];
+                break;
+            }
+        }
+    }
+    if (groupFocus!=""){
+        new build = {};
+        build.group = groupFocus;
+        build.title = document.getElementById("").content;
+    }
+}
+
+//restores most recent grid state prior to most current change
 function undoLast(){
     var newGridFor = document.getElementsByClassName("emptyGrid")[0];
     var rows = newGridFor.children;
+
+    for (var j = 0; j < groups.length; j++){
+        if (grid[i].gridSlot == lastTen.length - 1){
+            grid.remove(grid[i]);
+        }
+    }
 
     var toRestore;
     if (lastTen.length === 0){
@@ -58,6 +86,7 @@ function undoLast(){
     return false;
 }
 
+//restores the grid to a blank state
 function resetGrid(){
     var newGridFor = document.getElementsByClassName("emptyGrid")[0];
     var rows = newGridFor.children;
@@ -195,6 +224,25 @@ function copyGrid(height, width, scale){
     return newGrid;
 }
 
+//helper function to save groups when they are made
+function createGroup(neighboringCells, currentGrid){
+    const structure = {};
+    var cells = [];
+    var gridState = [];
+    for (var i = 0; i < neighboringCells.length; i++){
+        const block = {};
+        block.type = (neighboringCells[i].style.backgroundImage);
+        block.index = neighboringCells[i].id;
+        cells.append(block);
+        gridState.append(neighboringCells[i]);
+    }
+    structure.cells = cells;
+    structure.grid = gridState;
+    structure.gridSlot = lastTen.length - 1;
+    groups.append(structure);
+    return false;
+}
+
 //creates grid given input for width and height
 function calculateGrid() {
     lastTen = [];
@@ -251,8 +299,13 @@ function calculateGrid() {
           col.style.height = String(800/(width/scale)) + "px";
           //event listeners for clicks
           col.addEventListener("click", function() {
-            this.style.backgroundColor = 
-            (this.style.backgroundColor === "red") ? "white" : "red";
+            if (this.style.backgroundColor === "blue"){
+                createBuild(this);
+            }
+            else {
+                this.style.backgroundColor = 
+                (this.style.backgroundColor === "red") ? "white" : "red";
+            }
             var copy = copyGrid(height, width, scale, newGridFor);
             if (lastTen.length >= 10){
                 var old = lastTen.pop();
@@ -283,6 +336,7 @@ function calculateGrid() {
                 console.log("colored!");
             }
             var copy = copyGrid(height, width, scale, newGridFor);
+            createGroup(neighboringCells, newGridFor);
             if (lastTen.length >= 10){
                 var old = lastTen.pop();
             }
