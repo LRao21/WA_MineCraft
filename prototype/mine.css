@@ -654,6 +654,10 @@ a:hover{
   filter: blur(0px);
 }
 
+#gallery table{
+  margin-bottom: 60px;
+}
+
 #gallery table td{
   padding: 5px;
 }
