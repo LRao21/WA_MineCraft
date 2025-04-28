@@ -4,6 +4,7 @@ document.addEventListener("mouseup", () => mouseHovering = false);
 
 let newestCells = [];
 let neighboringCells = [];
+let appendable = [];
 let lastTen = [];
 
 let users = {};
@@ -28,28 +29,14 @@ function saveLayer(){
 
 //designates a group as a build, creates a build object
 function createBuild(){
-    var groupFocus = document.getElementById("number");
-    var toFind = -1;
-    if (groupFocus!=null){
-        toFind = parseInt(groupFocus.value)-1;
-        if (groups.length==0){
-            alert("There are no groups to create a build with.");
-                return false;
-        }
-        if (toFind >= 0){
-            if (toFind >= groups.length){
-                alert("Please enter a group number smaller than the current possible groups.");
-                return false;
-            }
-
-        } else {
-            alert("Please enter a group number greater than 0.");
-            return false;
-        }
+    if (neighboringCells.length!=0){
+        var newGridFor = document.getElementsByClassName("emptyGrid")[0];
+        createGroup(neighboringCells, newGridFor);
+        neighboringCells = [];
     } else {
-       console.log("error: unable to find any group #");
-       return false;
+        alert("There are no grid sections prepped for building.");
     }
+    return false;
 }
 
 //restores most recent grid state prior to most current change
@@ -108,12 +95,27 @@ function resetGrid(){
         }
     }
     groups = [];
+    neighboringCells = [];
     var copy = copyGrid(rows.length, rows[0].children.length, 1, newGridFor);
     if (lastTen.length >= 10){
         var old = lastTen.pop();
     }
     lastTen.push(copy);
     return false;
+}
+
+//helper function to find a group given a cell
+function findGroup(cell){
+    var index = 0;
+    for (var l = 0; l < groups.length; l++){
+        var cells = groups[l].gridState;
+        for (var k = 0; k < cells.length; k++){
+            if (cell.id === cells[k]){
+                return l;
+            }
+        }
+    }
+    return -1;
 }
 //helper function to find other cells in an object
 function findNeighbors(toPopulate, grid, width, height, scale, col, color){
@@ -157,11 +159,33 @@ function findNeighbors(toPopulate, grid, width, height, scale, col, color){
                 console.log("right is a match!");
                 findNeighbors(toPopulate, grid, width, height, scale, rightNeighbor, color);
             }
+        } else if (rightNeighbor!=null && rightNeighbor.style.backgroundColor === "purple"){
+            var oldGroup = findGroup(rightNeighbor);
+            if (oldGroup > -1){
+                groups.splice(oldGroup,1);
+                console.log("removed a prior");
+            }
+            rightNeighbor.style.backgroundColor = "blue";
+            if (!toPopulate.includes(rightNeighbor.id)){
+                toPopulate.push(rightNeighbor.id);
+                findNeighbors(toPopulate, grid, width, height, scale, rightNeighbor, color);
+            }
         }
         if (lefttNeighbor!=null && lefttNeighbor.style.backgroundColor === color){
             if (!toPopulate.includes(lefttNeighbor.id)){
                 toPopulate.push(lefttNeighbor.id);
                 console.log("left is a match!");
+                findNeighbors(toPopulate, grid, width, height, scale, lefttNeighbor, color);
+            }
+        } else if (lefttNeighbor!=null && lefttNeighbor.style.backgroundColor === "purple"){
+            var oldGroup = findGroup(lefttNeighbor);
+            if (oldGroup > -1){
+                groups.splice(oldGroup,1);
+                console.log("removed a prior");
+            }
+            lefttNeighbor.style.backgroundColor = "blue";
+            if (!toPopulate.includes(lefttNeighbor.id)){
+                toPopulate.push(lefttNeighbor.id);
                 findNeighbors(toPopulate, grid, width, height, scale, lefttNeighbor, color);
             }
         }
@@ -171,11 +195,34 @@ function findNeighbors(toPopulate, grid, width, height, scale, col, color){
                 console.log("top is a match!");
                 findNeighbors(toPopulate, grid, width, height, scale, topNeighbor, color);
             }
+        } else if (topNeighbor!=null && topNeighbor.style.backgroundColor === "purple"){
+            var oldGroup = findGroup(topNeighbor);
+            if (oldGroup > -1){
+                groups.splice(oldGroup,1);
+                console.log("removed a prior");
+            }
+            topNeighbor.style.backgroundColor = "blue";
+            if (!toPopulate.includes(topNeighbor.id)){
+                toPopulate.push(topNeighbor.id);
+                findNeighbors(toPopulate, grid, width, height, scale, topNeighbor, color);
+            }
+            
         }
         if (bottomNeighbor!=null && bottomNeighbor.style.backgroundColor === color){
             if (!toPopulate.includes(bottomNeighbor.id)){
                 toPopulate.push(bottomNeighbor.id);
                 console.log("bottom is a match!");
+                findNeighbors(toPopulate, grid, width, height, scale, bottomNeighbor, color);
+            }
+        } else if (bottomNeighbor!=null && bottomNeighbor.style.backgroundColor === "purple"){
+            var oldGroup = findGroup(bottomNeighbor);
+            if (oldGroup > -1){
+                groups.splice(oldGroup,1);
+                console.log("removed a prior");
+            }
+            bottomNeighbor.style.backgroundColor = "blue";
+            if (!toPopulate.includes(bottomNeighbor.id)){
+                toPopulate.push(bottomNeighbor.id);
                 findNeighbors(toPopulate, grid, width, height, scale, bottomNeighbor, color);
             }
         }
@@ -241,15 +288,18 @@ function createGroup(neighboringCells, currentGrid){
     for (var i = 0; i < neighboringCells.length; i++){
         const block = {};
         block.type = (document.getElementById(neighboringCells[i]).style.backgroundImage);
-        block.index = neighboringCells[i].id;
+        document.getElementById(neighboringCells[i]).style.backgroundColor = "purple";
+        block.index = neighboringCells[i];
         cells.push(block);
         gridState.push(neighboringCells[i]);
     }
     structure.cells = cells;
-    structure.grid = gridState;
+    structure.gridState = gridState;
     structure.gridSlot = lastTen.length - 1;
+    structure.title = document.getElementById("title").value;
+    structure.type = document.getElementById("type").value;
     groups.push(structure);
-    console.log("group added: " + groups.length);
+    console.log("group added: " + groups.length + ", " + structure.title + ", " + structure.type);
     return false;
 }
 
@@ -317,7 +367,7 @@ function calculateGrid() {
             });
           col.addEventListener("mouseover", function(e) {
             e.preventDefault()
-            if (mouseHovering) {
+            if (mouseHovering && this.style.backgroundColor != "blue") {
                 this.style.backgroundColor = "red";
                 var copy = copyGrid(height, width, scale, newGridFor);
                 if (lastTen.length >= 10){
@@ -327,9 +377,10 @@ function calculateGrid() {
             }
             });
           col.addEventListener('dblclick', function() {
-            alert('Double click detected!');
+            alert('This part of the grid is now prepped for build assignment!');
             this.style.backgroundColor = "red";
             neighboringCells = [];
+            neighboringCells.push(this.id);
             findNeighbors(neighboringCells, newGridFor, width, height, scale,
                 this, this.style.backgroundColor);
             console.log("done!");
@@ -343,7 +394,6 @@ function calculateGrid() {
                 var old = lastTen.pop();
             }
             lastTen.push(copy);
-            createGroup(neighboringCells, newGridFor);
             });
             col.style.backgroundColor = "white";
             row.appendChild(col);
