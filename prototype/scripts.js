@@ -33,6 +33,8 @@ function createBuild(){
         var newGridFor = document.getElementsByClassName("emptyGrid")[0];
         createGroup(neighboringCells, newGridFor);
         neighboringCells = [];
+        var buildPath = document.getElementById("buildLayers");
+        buildPath.innerHTML = buildPath.innerHTML + String(groups[groups.length-1].title) + "\n";
     } else {
         alert("There are no grid sections prepped for building.");
     }
@@ -46,8 +48,14 @@ function undoLast(){
 
     for (var j = 0; j < groups.length; j++){
         if (groups[j].gridSlot === (lastTen.length - 1)){
-            groups.split(i,1);
+            groups.splice(i,1);
             console.log("Removed one group, groups remaining: " + String(groups.length));
+            var parts = document.getElementById("buildLayers").innerHTML.split("\n");
+            document.getElementById("buildLayers").innerHTML = "";
+            for (var p = 0; p < parts.length - 2; p++){
+                 console.log(parts.length - 1);
+                 document.getElementById("buildLayers").innerHTML = document.getElementById("buildLayers").innerHTML + parts[p];
+            }
         }
     }
 
@@ -300,6 +308,12 @@ function createGroup(neighboringCells, currentGrid){
     structure.type = document.getElementById("type").value;
     groups.push(structure);
     console.log("group added: " + groups.length + ", " + structure.title + ", " + structure.type);
+    var newGridFor = document.getElementsByClassName("emptyGrid")[0];
+    var copy = copyGrid(height, width, scale, newGridFor);
+    if (lastTen.length >= 10){
+        var old = lastTen.pop();
+    }
+    lastTen.push(copy);
     return false;
 }
 
