@@ -12,7 +12,7 @@ let pw = "";
 
 let temp = "";
 
-let groups = []
+let groups = [];
 let builds = [];
 
 /* FOR GRID */
@@ -31,8 +31,12 @@ function createBuild(){
     var groupFocus = document.getElementById("number");
     var toFind = -1;
     if (groupFocus!=null){
-        toFind = groupFocus.content;
-        if (toFind > 0){
+        toFind = parseInt(groupFocus.value)-1;
+        if (groups.length==0){
+            alert("There are no groups to create a build with.");
+                return false;
+        }
+        if (toFind >= 0){
             if (toFind >= groups.length){
                 alert("Please enter a group number smaller than the current possible groups.");
                 return false;
@@ -54,8 +58,8 @@ function undoLast(){
     var rows = newGridFor.children;
 
     for (var j = 0; j < groups.length; j++){
-        if (grid[i].gridSlot == lastTen.length - 1){
-            grid.remove(grid[i]);
+        if (groups[i].gridSlot == lastTen.length - 1){
+            groups.remove(groups[i]);
         }
     }
 
@@ -102,6 +106,7 @@ function resetGrid(){
             }
         }
     }
+    groups = [];
     var copy = copyGrid(rows.length, rows[0].children.length, 1, newGridFor);
     if (lastTen.length >= 10){
         var old = lastTen.pop();
@@ -237,13 +242,14 @@ function createGroup(neighboringCells, currentGrid){
         const block = {};
         block.type = (document.getElementById(neighboringCells[i]).style.backgroundImage);
         block.index = neighboringCells[i].id;
-        cells.append(block);
-        gridState.append(neighboringCells[i]);
+        cells.push(block);
+        gridState.push(neighboringCells[i]);
     }
     structure.cells = cells;
     structure.grid = gridState;
     structure.gridSlot = lastTen.length - 1;
-    groups.append(structure);
+    groups.push(structure);
+    console.log("group added: " + groups.length);
     return false;
 }
 
