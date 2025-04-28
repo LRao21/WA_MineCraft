@@ -28,19 +28,23 @@ function saveLayer(){
 
 //designates a group as a build, creates a build object
 function createBuild(){
-    var groupFocus = "";
-    for (var k = 0; k < groups.length; k++){
-        for (var l = 0; l < groups[k].cells.length;l++){
-            if (groups[k].cells[i].id === cell.id){
-                groupFocus = groups[k];
-                break;
+    var groupFocus = document.getElementById("number");
+    var toFind = -1;
+    if (groupFocus!=null){
+        toFind = groupFocus.content;
+        if (toFind > 0){
+            if (toFind >= groups.length){
+                alert("Please enter a group number smaller than the current possible groups.");
+                return false;
             }
+
+        } else {
+            alert("Please enter a group number greater than 0.");
+            return false;
         }
-    }
-    if (groupFocus!=""){
-        new build = {};
-        build.group = groupFocus;
-        build.title = document.getElementById("").content;
+    } else {
+       console.log("error: unable to find any group #");
+       return false;
     }
 }
 

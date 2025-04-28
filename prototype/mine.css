@@ -770,10 +770,6 @@ a:hover{
   padding-top:110px;
 }
 
-#experiment main{
-  display: inline-block;
-}
-
 #experiment button{
   padding: 5px;
   font-family: "Roboto";
@@ -791,20 +787,6 @@ a:hover{
 
 }
 
-.expContainer{
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(6, 1fr);
-  grid-template-areas:
-  "title title title title title"
-  "user control control control control"
-  "size grid grid grid grid"
-  "tip grid grid grid grid"
-  "tip grid grid grid grid"
-  "file grid grid grid grid";
-  grid-gap: 5px;
-}
-
 #experiment h1 {
   grid-area: title;
   height: 100px;
@@ -814,22 +796,37 @@ a:hover{
   margin-bottom: 30px;
 }
 
-#experiment h3 {
-  margin: 0px;
-  margin-bottom: 5px;
-  background-color: rgb(163, 196, 224);
+#experiment main{
+  display: grid;
+  grid-template-columns:repeat(10,1fr);
+  grid-template-rows: repeat(10,auto);
+  grid-template-areas:
+  "title title title title title title title title title title"
+  "user user grid grid grid grid grid grid grid grid"
+  "control control grid grid grid grid grid grid grid grid"
+  "size size grid grid grid grid grid grid grid grid"
+  "file file grid grid grid grid grid grid grid grid"
+  "file file grid grid grid grid grid grid grid grid"
+  "file file grid grid grid grid grid grid grid grid"
+  "file file grid grid grid grid grid grid grid grid"
+  "file file grid grid grid grid grid grid grid grid"
+  "file file grid grid grid grid grid grid grid grid";
+  grid-gap: 5px;
 }
 
 #greeting{
+  margin:0px;
   grid-area:user;
-  height: 70%;
+  background-color: rgb(163, 196, 224);
+  height: 50px;
 }
 
 .planGrid{
   grid-area: size;
   background-color: rgb(163, 196, 224);
-  margin-top: -100px;
   padding-left: 10px;
+  padding-right: 5px;
+  height: 340px;
 }
 
 .fileNavigation{
@@ -837,62 +834,41 @@ a:hover{
   grid-area: file;
   background-color: rgb(163, 196, 224);
   padding-left: 10px;
+  padding-right: 5px;
 }
 
-.gridInfor{
-  margin: 0px;
-  grid-area: tip;
-  background-color: rgb(163, 196, 224);
-  padding-left: 10px;
-}
+/*controls*/
 
 .controlBar{
   grid-area: control;
-  margin: 0px;
-  height: 160px;
+  padding: 5px;
   background-color: rgb(163, 196, 224);
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-  grid-template-rows: repeat(2,1fr);
-  grid-template-areas:
-  "reset undo save colorSpot"
-  "build . . color";
 }
 
 .controlBar button{
   height: 50px;
-}
-
-#reset{
-  grid-area:reset;
-}
-
-#undo{
-  grid-area:undo;
-}
-
-#build{
-  width:100%;
+  margin:0px;
+  width: 100%;
 }
 
 .build-content{
-  grid-area:build;
-  min-height: 200px;
+  width: 100%;
+  min-height: 60px;
   display:inline-block;
 }
 
 #build-collapse{
-  grid-area:content;
   background-color: white;
   display:none;
-  width:100%;
-  z-index:1;
+  width:95%;
+  padding: 5px;
 }
 
 .build-content:hover #build-collapse{
   display:inline-block;
 }
 
+/*Grid*/
 .emptyGrid {
   grid-area: grid;
   margin: 0px;
@@ -900,9 +876,7 @@ a:hover{
   flex-direction: column;
   gap: 2px;
   align-items: center;
-  margin-top: -100px;
   border: 2px solid black;
-  z-index:2;
 }
 
 .row {
