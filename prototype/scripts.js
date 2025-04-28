@@ -235,7 +235,7 @@ function createGroup(neighboringCells, currentGrid){
     var gridState = [];
     for (var i = 0; i < neighboringCells.length; i++){
         const block = {};
-        block.type = (neighboringCells[i].style.backgroundImage);
+        block.type = (document.getElementById(neighboringCells[i]).style.backgroundImage);
         block.index = neighboringCells[i].id;
         cells.append(block);
         gridState.append(neighboringCells[i]);

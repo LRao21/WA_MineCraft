@@ -768,6 +768,7 @@ a:hover{
 
 #experiment{
   padding-top:110px;
+  min-width: 1200px;
 }
 
 #experiment button{
@@ -815,10 +816,11 @@ a:hover{
 }
 
 #greeting{
+  min-width: 200px;
   margin:0px;
   grid-area:user;
   background-color: rgb(163, 196, 224);
-  height: 50px;
+  height: 60px;
 }
 
 .planGrid{
@@ -830,6 +832,7 @@ a:hover{
 }
 
 .fileNavigation{
+  min-width: 200px;
   margin: 0px;
   grid-area: file;
   background-color: rgb(163, 196, 224);
@@ -840,6 +843,7 @@ a:hover{
 /*controls*/
 
 .controlBar{
+  min-width: 200px;
   grid-area: control;
   padding: 5px;
   background-color: rgb(163, 196, 224);
@@ -877,6 +881,8 @@ a:hover{
   gap: 2px;
   align-items: center;
   border: 2px solid black;
+  min-width: 970px;
+  max-width: 970px;
 }
 
 .row {
