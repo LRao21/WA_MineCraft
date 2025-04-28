@@ -260,7 +260,7 @@ function calculateGrid() {
         } else if (width<=0){
             alert("You must enter a width");
             return false;
-        } else if ((800*scale)/width < 21){
+        } else if ((800*scale)/width < 23){
             alert("Please enter a smaller width or the grid won't fit!");
             return false;
         }
@@ -269,9 +269,6 @@ function calculateGrid() {
             return false;
         } else if (height<=0){
             alert("You must enter a height");
-            return false;
-        } else if ((800*scale)/height < 21){
-            alert("Please enter a smaller height or the grid won't fit!");
             return false;
         }
         if (isNaN(scale)) {
