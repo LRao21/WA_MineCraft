@@ -800,9 +800,10 @@ a:hover{
 #experiment main{
   display: grid;
   grid-template-columns:repeat(10,1fr);
-  grid-template-rows: repeat(10,auto);
+  grid-template-rows: repeat(11,auto);
   grid-template-areas:
   "title title title title title title title title title title"
+  "tutorial tutorial tutorial tutorial tutorial tutorial tutorial tutorial tutorial tutorial"
   "user user grid grid grid grid grid grid grid grid"
   "control control grid grid grid grid grid grid grid grid"
   "size size grid grid grid grid grid grid grid grid"
@@ -870,6 +871,25 @@ a:hover{
 
 .build-content:hover #build-collapse{
   display:inline-block;
+}
+
+.tutorial{
+  grid-area: tutorial;
+  margin-bottom: 20px;
+}
+
+#tutorialButton{
+  width: 222px;
+}
+
+.tutorialContainer{
+  height: 300px;
+  display: none;
+}
+
+.tutorial:hover .tutorialContainer{
+  display: inline-block;
+
 }
 
 /*Grid*/
