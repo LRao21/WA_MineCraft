@@ -58,8 +58,9 @@ function undoLast(){
     var rows = newGridFor.children;
 
     for (var j = 0; j < groups.length; j++){
-        if (groups[i].gridSlot == lastTen.length - 1){
-            groups.remove(groups[i]);
+        if (groups[j].gridSlot === (lastTen.length - 1)){
+            groups.split(i,1);
+            console.log("Removed one group, groups remaining: " + String(groups.length));
         }
     }
 
@@ -114,7 +115,6 @@ function resetGrid(){
     lastTen.push(copy);
     return false;
 }
-
 //helper function to find other cells in an object
 function findNeighbors(toPopulate, grid, width, height, scale, col, color){
     var rowCount = Math.floor(height/scale);
@@ -339,11 +339,11 @@ function calculateGrid() {
                 console.log("colored!");
             }
             var copy = copyGrid(height, width, scale, newGridFor);
-            createGroup(neighboringCells, newGridFor);
             if (lastTen.length >= 10){
                 var old = lastTen.pop();
             }
             lastTen.push(copy);
+            createGroup(neighboringCells, newGridFor);
             });
             col.style.backgroundColor = "white";
             row.appendChild(col);
