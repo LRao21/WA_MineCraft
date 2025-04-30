@@ -1,232 +1,232 @@
 /* General Structure (Base) */
 body {
-    margin: 0;
-    overflow-x: hidden;
+  margin: 0;
+  overflow-x: hidden;
 
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover; 
-    background-image: linear-gradient(to bottom, transparent, transparent),  url('images/night.jpg');    
-    
-    font-size: 18px;
-    line-height: 150%;
-    font-family: 'Calibri', sans-serif;    
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover; 
+  background-image: linear-gradient(to bottom, transparent, transparent),  url('images/night.jpg');    
+  
+  font-size: 18px;
+  line-height: 150%;
+  font-family: 'Calibri', sans-serif;    
 }
 
 .wrapper {
-    background-size: cover;
-    background: rgb(220, 237, 246);
-    height:100%;
-    width: 80%;
-    min-width: 900px;
-    max-width: 1500px;
-    margin: auto;
+  background-size: cover;
+  background: rgb(220, 237, 246);
+  height:100%;
+  width: 80%;
+  min-width: 900px;
+  max-width: 1500px;
+  margin: auto;
 
-    padding-top: 200px;
-    padding-bottom: 50px;
-    padding-left: 40px;
-    padding-right: 40px;
+  padding-top: 200px;
+  padding-bottom: 50px;
+  padding-left: 40px;
+  padding-right: 40px;
 
-    align-items: center;
+  align-items: center;
 }
 
 .main {
-    padding-left: 40px;
-    padding-right: 40px;
-    align-items: center;
-    min-height: 800px;
-    min-width: 900px;
+  padding-left: 40px;
+  padding-right: 40px;
+  align-items: center;
+  min-height: 800px;
+  min-width: 900px;
 }
 
 .footer {
-    background: rgb(40, 40, 78);
-    text-align: center;
-    font-size: 16px;
-    padding: 20px;
-    width: 100%;
-    z-index:2;
+  background: rgb(40, 40, 78);
+  text-align: center;
+  font-size: 16px;
+  padding: 20px;
+  width: 100%;
+  z-index:2;
 }
 .footer p {
-    color: white;
+  color: white;
 }
 .footer a {
-    color:rgb(194, 89, 194);
+  color:rgb(194, 89, 194);
 }
 
 h1 {
-    font-size: 64px;
-    line-height: 150%;
-    color: rgb(81, 7, 104);
-    text-align: center;
-    margin-top: 50px;
-    width: 100%;
-    font-family:"Bodoni Moda SC" 
+  font-size: 64px;
+  line-height: 150%;
+  color: rgb(81, 7, 104);
+  text-align: center;
+  margin-top: 50px;
+  width: 100%;
+  font-family:"Bodoni Moda SC" 
 }
 
- h2 {
-    font-size: 50px;
-    color: rgb(62, 10, 150);
-    text-align: center;
-    margin-top: 50px;
- }
+h2 {
+  font-size: 50px;
+  color: rgb(62, 10, 150);
+  text-align: center;
+  margin-top: 50px;
+}
 
- h3 {
-    font-size: 24px;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    color: rgb(40, 40, 78);
- }
+h3 {
+  font-size: 24px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  color: rgb(40, 40, 78);
+}
 
- h4 {
-    font-size: 20px;
-    font-family: "Roboto";
-    color: rgb(194, 89, 194);
- }
+h4 {
+  font-size: 20px;
+  font-family: "Roboto";
+  color: rgb(194, 89, 194);
+}
 
- p {
-    font-size: 18px;
-    font-family: 'Roboto';
- }
+p {
+  font-size: 18px;
+  font-family: 'Roboto';
+}
 /*---------------------*/
 
- /* Links */
+/* Links */
 a {
-    padding: 5px;
-    font-family: "Roboto";
-    text-decoration: none;
-    color:rgb(104, 48, 104);
-    font-weight: bold;
+  padding: 5px;
+  font-family: "Roboto";
+  text-decoration: none;
+  color:rgb(104, 48, 104);
+  font-weight: bold;
 }
 
 a:hover{
-    padding: 5px;
-    font-family: "Roboto";
-    text-decoration: none;
-    color:rgb(94, 110, 190);
-    font-weight: bold;
+  padding: 5px;
+  font-family: "Roboto";
+  text-decoration: none;
+  color:rgb(94, 110, 190);
+  font-weight: bold;
 }
 /*---------------------*/
 
 /* On-page navigation */
 .nav{
-  border-radius: 0.5em;
-  background-color: pink;
-  text-decoration: none;
-  padding: 5px;
-  box-shadow: 2px 5px;
-  margin-left: 10px;
-  margin-right: 10px;
-  width: 100px;
-  font-size: 20px;
-  margin-bottom: 10px;
+border-radius: 0.5em;
+background-color: pink;
+text-decoration: none;
+padding: 5px;
+box-shadow: 2px 5px;
+margin-left: 10px;
+margin-right: 10px;
+width: 100px;
+font-size: 20px;
+margin-bottom: 10px;
 }
 
 .nav:hover {
-  border-radius: 1em;
-  background-color: powderblue;
-  color:rgb(125, 90, 165);
-  text-decoration: none;
-  padding: 5px;
-  box-shadow: 2px 5px;
+border-radius: 1em;
+background-color: powderblue;
+color:rgb(125, 90, 165);
+text-decoration: none;
+padding: 5px;
+box-shadow: 2px 5px;
 }
 
 .nav:hover a{
-  padding: 5px;
-  text-decoration: none;
-  color:rgb(125, 90, 165);
-  font-weight: bold;
+padding: 5px;
+text-decoration: none;
+color:rgb(125, 90, 165);
+font-weight: bold;
 }
 /*----------------------------*/
 
 /* Site header */
 
 .site-header{
-  display: grid;
-  grid-template-columns: repeat (2,1fr);
-  grid-template-areas: "photo nav";
-  column-gap: 2%;
+display: grid;
+grid-template-columns: repeat (2,1fr);
+grid-template-areas: "photo nav";
+column-gap: 2%;
 
-  background: rgb(40, 40, 78);
-  width: 100%;
-  height: 15%;
-  min-width: 1200px;
-  
-  position: absolute; 
-  top: 0; 
-  left:0;
-  z-index: 1;
+background: rgb(40, 40, 78);
+width: 100%;
+height: 15%;
+min-width: 1200px;
 
-  padding-top: 1%;
-  padding-right: 2%;
-  padding-left: 2%;
-  padding-bottom: 1%;
+position: absolute; 
+top: 0; 
+left:0;
+z-index: 1;
 
-  align-items: center;
+padding-top: 1%;
+padding-right: 2%;
+padding-left: 2%;
+padding-bottom: 1%;
+
+align-items: center;
 }
 
 .site-logo {
-    grid-area: "photo";
+  grid-area: "photo";
 
-    width: 70%;
-    height: 32px;
-    min-height: 100px;
+  width: 70%;
+  height: 32px;
+  min-height: 100px;
 
-    padding-left: 15%;
+  padding-left: 15%;
 }
 
 .site-nav{
-    grid-area: "nav";
+  grid-area: "nav";
 
-    display: grid;
-    gap: 0.5em 0.5em;
-    grid-template-columns: repeat(9,1fr);
-    grid-template-rows: auto;
-    grid-template-areas: "gall rev exp map ab log log moon search";
-  
-    text-align: center;
+  display: grid;
+  gap: 0.5em 0.5em;
+  grid-template-columns: repeat(9,1fr);
+  grid-template-rows: auto;
+  grid-template-areas: "gall rev exp map ab log log moon search";
 
-    margin-bottom: 10px;
+  text-align: center;
 
-    padding-right: 5%;
+  margin-bottom: 10px;
+
+  padding-right: 5%;
 }
 
 .navSite{
-    height: 30px;
-    text-decoration: none;
-    font-weight: bold;
-    color: rgb(185, 219, 245);
-    padding: 8px;
+  height: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  color: rgb(185, 219, 245);
+  padding: 8px;
 }
-		
+  
 .navSite:hover{
-     color: rgb(125, 90, 165);
-     background: rgba(214, 181, 19, 0.839);	 
+   color: rgb(125, 90, 165);
+   background: rgba(214, 181, 19, 0.839);	 
 }
 
 #log {
-  grid-area: log;
+grid-area: log;
 }
 
 #searchBar{
-    grid-area: "search";
+  grid-area: "search";
 
-    border-radius: 1.5em;
+  border-radius: 1.5em;
 
-    padding-left: 10px;
-    padding-right: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 #moon{
-    grid-area: "moon";
-    margin-top:10%;
-    float:right;
-    visibility: visible;
-    color: grey;
+  grid-area: "moon";
+  margin-top:10%;
+  float:right;
+  visibility: visible;
+  color: grey;
 }
 
 #sun{
-    margin-top:9px;
-    float:right;
-    visibility: hidden;
+  margin-top:9px;
+  float:right;
+  visibility: hidden;
 }
 /*---------------------*/
 
@@ -234,134 +234,134 @@ a:hover{
 
 
 #home {
-  background: linear-gradient(to bottom, transparent, rgb(220, 237, 246),rgb(220, 237, 246),rgb(220, 237, 246),rgb(220, 237, 246));
-  margin-top: 20px;
+background: linear-gradient(to bottom, transparent, rgb(220, 237, 246),rgb(220, 237, 246),rgb(220, 237, 246),rgb(220, 237, 246));
+margin-top: 20px;
 }
 
 .title {
-  background: transparent;
-  height: 400px;
-  min-width: 1000px;
+background: transparent;
+height: 400px;
+min-width: 1000px;
 
-  padding-right: 70px;
-  padding-left: 70px;
-  margin-bottom: 4%;
-  animation: fadeIntoView 7s;
-  align-items: center;
+padding-right: 70px;
+padding-left: 70px;
+margin-bottom: 4%;
+animation: fadeIntoView 7s;
+align-items: center;
 }
 
 @keyframes fadeIntoView {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+0% { opacity: 0; }
+100% { opacity: 1; }
 }
 @keyframes fadeOverView {
-  0% { opacity: 0; }
-  50% { opacity: 1; }
-  100% { opacity: 0; }
+0% { opacity: 0; }
+50% { opacity: 1; }
+100% { opacity: 0; }
 }
 @keyframes shiftColors {
-  0% { color: rgb(106, 10, 136); }
-  50% { color: rgb(207, 182, 214); }
-  100% { color: rgb(106, 10, 136); }
+0% { color: rgb(106, 10, 136); }
+50% { color: rgb(207, 182, 214); }
+100% { color: rgb(106, 10, 136); }
 
 }
 
 .title h1{
-  margin-top: 250px;
-  font-size: 70px;
-  color: rgb(106, 10, 136);
-  opacity: 1;
-  font-family: "Arial";
+margin-top: 250px;
+font-size: 70px;
+color: rgb(106, 10, 136);
+opacity: 1;
+font-family: "Arial";
 }
 
 .title h1:hover{
-  font-size: 70px;
-  animation: shiftColors 3s;
+font-size: 70px;
+animation: shiftColors 3s;
 }
 
 .title p {
-  background-image: linear-gradient(to bottom, rgba(214, 181, 19, 1), rgba(214, 181, 19, 0.759));;
-  color: transparent;
-  background-clip: text;
-  text-align: center;
-  font-weight: 700;
-  font-size: 30px;
-  margin: auto;
-  margin-bottom: 100px;
-  /* padding-left: 60px; */
-  /* padding-right: 60px; */
-  padding-bottom: 20px;
-  margin-top: 60px;
-  font-family: "Arial";
-  line-height: 150%;
-  width: 60%;
+background-image: linear-gradient(to bottom, rgba(214, 181, 19, 1), rgba(214, 181, 19, 0.759));;
+color: transparent;
+background-clip: text;
+text-align: center;
+font-weight: 700;
+font-size: 30px;
+margin: auto;
+margin-bottom: 100px;
+/* padding-left: 60px; */
+/* padding-right: 60px; */
+padding-bottom: 20px;
+margin-top: 60px;
+font-family: "Arial";
+line-height: 150%;
+width: 60%;
 }
 
 .title p:hover{
-  animation: shiftColors 3s;
-  opacity: 1;
+animation: shiftColors 3s;
+opacity: 1;
 }
 
 .lead-display {
-    width: 100%;
-    height: 650px;
-    align-items: center;
+  width: 100%;
+  height: 650px;
+  align-items: center;
 }
 
- .lead-display img {
-    width: 90%;
-    border-radius: 1.5em;
-    border:rgb(81, 7, 104) 12px solid;
-    margin-left: 45px;
- }
+.lead-display img {
+  width: 90%;
+  border-radius: 1.5em;
+  border:rgb(81, 7, 104) 12px solid;
+  margin-left: 45px;
+}
 
 
 /*Showcase*/
 
 .showContainer {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    margin-bottom: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 50px;
 }
 
 .showcase-item {
-    background-color:rgb(135, 186, 227);
-    min-height: 700px; 
-    align-items: center;
-    margin: 10px;
-    border-radius: 1.5em;
-    padding-left: 20px;
-    padding-right: 20px;
-    position: relative;
-    top: 0;
-    transition: top ease 0.5s;
-    display:inline-block;
+  background-color:rgb(135, 186, 227);
+  min-height: 700px; 
+  align-items: center;
+  margin: 10px;
+  border-radius: 1.5em;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+  top: 0;
+  transition: top ease 0.5s;
+  display:inline-block;
 }
 
 .showcase-item:hover{
-    top:-10px;
-    background-color:rgba(214, 181, 19, 0.839);
+  top:-10px;
+  background-color:rgba(214, 181, 19, 0.839);
 }
 
 .showcase-item h3 {
-    background-color: rgb(185, 219, 245);
-    border-radius: 1.0em;
-    text-align: center;
+  background-color: rgb(185, 219, 245);
+  border-radius: 1.0em;
+  text-align: center;
 }
 
 .showcase-item p{
-    text-align: center;
+  text-align: center;
 }
 
 .showcase-item img{
-  border: 10px solid rgba(214, 181, 19, 0.799);
-  height: 300px;
-  width:300px;
+border: 10px solid rgba(214, 181, 19, 0.799);
+height: 300px;
+width:300px;
 }
 
 .description{
-    height: 20%;
-    text-align: center;
+  height: 20%;
+  text-align: center;
 }
 
 /*---------------------*/
@@ -369,47 +369,65 @@ a:hover{
 /*Reviews Page*/
 
 #reviews{
-    padding-top: 110px;
-    min-width: 1100px;
+  padding-top: 110px;
+  min-width: 1100px;
 }
 
 #reviews main{
-  display: inline-block;
+display: inline-block;
 }
 
 .reviewContent{
-  display:grid;
-  grid-template-columns: repeat(10,1fr);
-  grid-template-areas: "review review review review review review review side side side";
+display:grid;
+grid-template-columns: repeat(10,1fr);
+grid-template-areas: "review review review review review review review side side side";
 }
 
 #reviews main h1 {
-    height: 100px;
-    text-align: center;
-    font-weight: normal;
-    background-color:rgba(106, 90, 165, 0.599);
-    margin-bottom: 30px;
+  height: 100px;
+  text-align: center;
+  font-weight: normal;
+  background-color:rgba(106, 90, 165, 0.599);
+  margin-bottom: 30px;
 }
 
 /* Filters */
 .filters{
-    background-color: rgb(135, 186, 227);
-    padding: 20px 30px;
-    margin-bottom: 20px;
-    height: 40px;
+  background-color: rgb(135, 186, 227);
+  padding: 20px 30px;
+  margin-bottom: 20px;
+  height: 40px;
 }
 
 .optionsContainer {
-    display: grid;
-    grid-template-columns: auto auto auto auto auto;
-    width: 70%;
-    column-gap: 20px;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  width: 70%;
+  column-gap: 20px;
 }
 
 .filterButton{
+background-color: rgb(170, 207, 237);
+border: none;
+color: rgb(104, 48, 104);
+padding: 2px 32px;
+padding-bottom: 5px;
+border-radius: 1.5em;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+font-weight: bold;
+}
+
+.filterButton:hover {
+  background-color:rgba(214, 181, 19, 1);
+}
+
+.dropDownFilter{
   background-color: rgb(170, 207, 237);
   border: none;
-  color: rgb(104, 48, 104);
+  color: rgb(194, 89, 194);
   padding: 2px 32px;
   padding-bottom: 5px;
   border-radius: 1.5em;
@@ -420,346 +438,328 @@ a:hover{
   font-weight: bold;
 }
 
-.filterButton:hover {
+.dropDownFilter:hover {
     background-color:rgba(214, 181, 19, 1);
 }
 
-.dropDownFilter{
-    background-color: rgb(170, 207, 237);
-    border: none;
-    color: rgb(194, 89, 194);
-    padding: 2px 32px;
-    padding-bottom: 5px;
-    border-radius: 1.5em;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    font-weight: bold;
-  }
-
-.dropDownFilter:hover {
-      background-color:rgba(214, 181, 19, 1);
-  }
-  
 .dropdown{
-    position: relative;
-    display: inline-block;
-  }
+  position: relative;
+  display: inline-block;
+}
 
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f6f6f6;
-    min-width: 230px;
-    border: 1px solid #ddd;
-    z-index: 1;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  }
+  display: none;
+  position: absolute;
+  background-color: #f6f6f6;
+  min-width: 230px;
+  border: 1px solid #ddd;
+  z-index: 1;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
 
 .dropdown-content p {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
 
 .dropdown-content p:hover {
-    color: rgb(106, 10, 136);
-    font-weight: bold;
-    background-color: rgba(128, 128, 128, 0.526);
-  }
+  color: rgb(106, 10, 136);
+  font-weight: bold;
+  background-color: rgba(128, 128, 128, 0.526);
+}
 
 .dropdown:hover .dropdown-content {
-    display: block;
-  }
- 
+  display: block;
+}
+
 /*Reviews*/
 .reviewContainer {
-  grid-area: review;
-  min-width: 750px;
+grid-area: review;
+min-width: 750px;
 }
 
 .aReview{
-  margin-bottom: 20px;
-  width:100%;
+margin-bottom: 20px;
+width:100%;
 }
 
 /* review content*/
 .review {
-    margin-top: 20px;
-    background-color: rgba(163, 162, 163, 0.884);
-    padding: 10px 30px;
-    text-align: left;
-    display: none;
-    overflow: hidden;
-  }
+  margin-top: 20px;
+  background-color: rgba(163, 162, 163, 0.884);
+  padding: 10px 30px;
+  text-align: left;
+  display: none;
+  overflow: hidden;
+}
 
 .meta-content{
-    background-color: rgba(128, 128, 128, 0.212);
-    height: 100%;
-    margin-top: 20px;
-    padding-top: 5px;
-    display: none;
-    width: 100%;
-  }
-  
+  background-color: rgba(128, 128, 128, 0.212);
+  height: 100%;
+  margin-top: 20px;
+  padding-top: 5px;
+  display: none;
+  width: 100%;
+}
+
 .context {
-    row-gap: 25px;
-    width: 100%;
-  }
-  
+  row-gap: 25px;
+  width: 100%;
+}
+
 .context th, td {
-    border: 1px solid black;
-  }
+  border: 1px solid black;
+}
 
 /*hiding mechanism*/
 .collapsible {
-    margin-bottom: -20px;
-    margin-top: 20px;
-    cursor: pointer;
-    background-color: rgb(223, 219, 219);
-    width: 100%;
-  }
+  margin-bottom: -20px;
+  margin-top: 20px;
+  cursor: pointer;
+  background-color: rgb(223, 219, 219);
+  width: 100%;
+}
 
 .active, .collapsible:hover {
-    background-color: rgb(94, 110, 190);
-  }
+  background-color: rgb(94, 110, 190);
+}
 
 .aReview:hover .review{
-    display: inline-block;
-  }
+  display: inline-block;
+}
 
 .aReview:hover .meta-content{
-    display: inline-block;
-  }
+  display: inline-block;
+}
 
 /*side content*/
 .micro-reviews {
-    grid-area: side;
-    background-color: rgb(135, 186, 227);
-    
-    min-height: 500px;
-    min-width: 300px;
+  grid-area: side;
+  background-color: rgb(135, 186, 227);
+  
+  min-height: 500px;
+  min-width: 300px;
 
-    display:inline-block;
-    margin-left: 20px;
-    margin-top: 20px;
-  }
+  display:inline-block;
+  margin-left: 20px;
+  margin-top: 20px;
+}
 
 .micro-reviews h3{
-    text-align: center;
-  }
-  
+  text-align: center;
+}
+
 .micro-item {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
 
 .micro-item h4 {
-    background-color: rgb(208, 205, 205);
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border: 2px solid black;
-    text-align: center;
-  }
+  background-color: rgb(208, 205, 205);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 2px solid black;
+  text-align: center;
+}
 
 .micro-item:hover h4 {
-    background-color: rgb(182, 175, 213);
-  }
+  background-color: rgb(182, 175, 213);
+}
 
 .micro-item p {
-    background-color: rgb(240, 240, 240);
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-right: 10px;
-    padding-left: 10px;
-    border: 2px solid black;
-    text-align: center;
-    margin-top:-30px;
-    display: none;
-  }
+  background-color: rgb(240, 240, 240);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  border: 2px solid black;
+  text-align: center;
+  margin-top:-30px;
+  display: none;
+}
 
 .micro-item:hover p {
-    display: inline-block;
-  }
+  display: inline-block;
+}
 
 /*----------------------------*/
 
 /*Gallery Page*/
 
 #gallery{
-  padding-top: 110px;
-  min-width: 1150px;
+padding-top: 110px;
+min-width: 1150px;
 }
 
 #gallery main{
-  display:inline-block;
-  min-width: 1100px;
+display:inline-block;
+min-width: 1100px;
 }
 
 #gallery main h1 {
-  height: 100px;
-  text-align: center;
-  font-weight: normal;
-  background-color:rgba(106, 90, 165, 0.599);
-  margin-bottom: 30px;
+height: 100px;
+text-align: center;
+font-weight: normal;
+background-color:rgba(106, 90, 165, 0.599);
+margin-bottom: 30px;
 }
 
 /* Gallery */
 .gallery-grid {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-row-gap: 10px;
-  grid-column-gap: 15px;
-  justify-items: center;
-  justify-content: space-between;
-  
-  max-width: 100%;
-  
-  text-align: center;
+display: grid;
+grid-template-columns: auto auto;
+grid-row-gap: 10px;
+grid-column-gap: 15px;
+justify-items: center;
+justify-content: space-between;
+
+max-width: 100%;
+
+text-align: center;
 }
-            
+          
 .gallery-item {
-  width: 580px;
-  max-width: 100%;
-  height: 310px;
-  text-align: center;
-  background-color:antiquewhite;
-  padding-top: 15px;
+width: 580px;
+max-width: 100%;
+height: 310px;
+text-align: center;
+background-color:antiquewhite;
+padding-top: 15px;
 } 
 
 .gallery-item p {
-  margin: .25em 0;
-  line-height: 135%;
-  font-size: 17px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 10px;
+margin: .25em 0;
+line-height: 135%;
+font-size: 17px;
+padding-left: 15px;
+padding-right: 15px;
+padding-bottom: 10px;
 }
 
 .gallery-item img {
-  height: 250px;
-  margin-left: 20px;
-  margin-right: 20px;
+height: 250px;
+margin-left: 20px;
+margin-right: 20px;
 }
 
 .gallery-grid:hover .gallery-item{
-  filter: blur(5px);
+filter: blur(5px);
 }
 
 .gallery-grid .gallery-item:hover {
-  filter: blur(0px);
+filter: blur(0px);
 }
 
 #gallery table{
-  margin-bottom: 60px;
+margin-bottom: 60px;
 }
 
 #gallery table td{
-  padding: 5px;
+padding: 5px;
 }
 /*----------------------------*/
 
 /*About Page*/
 
 #about{
-  padding-top: 110px;
+padding-top: 110px;
 }
 
 #about main{
-  display:inline-block;
+display:inline-block;
 }
 
 #about h1 {
-  height: 100px;
-  text-align: center;
-  font-weight: normal;
-  background-color:rgba(106, 90, 165, 0.599);
-  margin-bottom: 30px;
+height: 100px;
+text-align: center;
+font-weight: normal;
+background-color:rgba(106, 90, 165, 0.599);
+margin-bottom: 30px;
 }
 
 .navigation{
-  background:white;
-  height: 400px;
-  display: grid;
-  grid-template-columns: 50% 50%;
-  align-items: center;
-  column-gap: 5px;
-  margin-bottom: 70px;
+background:white;
+height: 400px;
+display: grid;
+grid-template-columns: 50% 50%;
+align-items: center;
+column-gap: 5px;
+margin-bottom: 70px;
 }
 
 .navigation a {
-  padding-top:20%;
-  padding-bottom:20%;
-  background-color: rgb(194, 202, 248);
-  color: whitesmoke;
-  font-family:"Bodoni Moda SC";
-  font-size: 46px;
-  text-align: center;
-  line-height: 150%;
-  animation: fadeIntoView 5s;
-  height: 170px;
+padding-top:20%;
+padding-bottom:20%;
+background-color: rgb(194, 202, 248);
+color: whitesmoke;
+font-family:"Bodoni Moda SC";
+font-size: 46px;
+text-align: center;
+line-height: 150%;
+animation: fadeIntoView 5s;
+height: 170px;
 }
 
 .navigation a:hover {
-  animation: shiftColors 10s;
+animation: shiftColors 10s;
 }
 
 #about img {
-  width: 190px;
-  height: 250px;
-  margin: 20px;
-  margin-top: 5px;
+width: 190px;
+height: 250px;
+margin: 20px;
+margin-top: 5px;
 }
 
 #about h3{
-  text-align: center;
-  margin-bottom: 50px;
-  font-size: 50px;
+text-align: center;
+margin-bottom: 50px;
+font-size: 50px;
 }
 
 .team_member {
-  background-color: black;
-  display: grid;
-  grid-template-columns: repeat (3, 1fr);
-  grid-template-rows: repeat (2, 1fr);
-  grid-template-areas:
-  "image title title"
-  "image words words";
-  row-gap: 5px;
-  
-  margin-bottom: 50px;
-  height: 115%;
+background-color: black;
+display: grid;
+grid-template-columns: repeat (3, 1fr);
+grid-template-rows: repeat (2, 1fr);
+grid-template-areas:
+"image title title"
+"image words words";
+row-gap: 5px;
+
+margin-bottom: 50px;
+height: 115%;
 }
 
 .team_member h3{
-  background-color: rgb(255, 242, 218);
-  grid-area: title;
-  color:rgba(2, 2, 87, 0.695);
-  font-size: 20px;
-  margin:2px;
-  padding-top: 10%;
-  padding-bottom: 2%;
+background-color: rgb(255, 242, 218);
+grid-area: title;
+color:rgba(2, 2, 87, 0.695);
+font-size: 20px;
+margin:2px;
+padding-top: 10%;
+padding-bottom: 2%;
 }
 
 .team_member img{
-  background-color: rgb(255, 242, 218);
-  grid-area:image;
-  width: 100%;
-  height: 100%;
+background-color: rgb(255, 242, 218);
+grid-area:image;
+width: 100%;
+height: 100%;
 }
 
 .team_member p{
-  background-color: rgb(255, 242, 218);
-  grid-area: words;
-  height:150%;
-  margin:2px;
-  margin-top:-50px;
-  padding-bottom: 2px;
-  padding-left: 5px;
+background-color: rgb(255, 242, 218);
+grid-area: words;
+height:150%;
+margin:2px;
+margin-top:-50px;
+padding-bottom: 2px;
+padding-left: 5px;
 }
 
 /*---------------------------*/
@@ -767,226 +767,225 @@ a:hover{
 /*Experiment*/
 
 #experiment{
-  padding-top:110px;
-  min-width: 1200px;
+padding-top:110px;
+min-width: 1200px;
 }
 
 #experiment button{
-  padding: 5px;
-  font-family: "Roboto";
-  text-decoration: none;
-  background-color: rgb(194, 89, 194);
-  color:rgb(104, 48, 104);
-  font-weight: bold;
-  font-size: 17px;
-  background-color: transparent;
-  border: 2px solid rgb(218, 99, 218);
+padding: 5px;
+font-family: "Roboto";
+text-decoration: none;
+background-color: rgb(194, 89, 194);
+color:rgb(104, 48, 104);
+font-weight: bold;
+font-size: 17px;
+background-color: transparent;
+border: 2px solid rgb(218, 99, 218);
 }
 
 #experiment button:hover{
-  background-color: rgba(104, 48, 104, 0.338);
+background-color: rgba(104, 48, 104, 0.338);
 
 }
 
 #experiment h1 {
-  grid-area: title;
-  height: 100px;
-  text-align: center;
-  font-weight: normal;
-  background-color:rgba(106, 90, 165, 0.599);
-  margin-bottom: 30px;
+grid-area: title;
+height: 100px;
+text-align: center;
+font-weight: normal;
+background-color:rgba(106, 90, 165, 0.599);
+margin-bottom: 30px;
 }
 
 #experiment main{
-  display: grid;
-  grid-template-columns:repeat(10,1fr);
-  grid-template-rows: repeat(11,auto);
-  grid-template-areas:
-  "title title title title title title title title title title"
-  "tutorial tutorial tutorial tutorial tutorial tutorial tutorial tutorial tutorial tutorial"
-  "user user grid grid grid grid grid grid grid grid"
-  "control control grid grid grid grid grid grid grid grid"
-  "size size grid grid grid grid grid grid grid grid"
-  "file file grid grid grid grid grid grid grid grid"
-  "file file grid grid grid grid grid grid grid grid"
-  "file file grid grid grid grid grid grid grid grid"
-  "file file grid grid grid grid grid grid grid grid"
-  "file file grid grid grid grid grid grid grid grid"
-  "file file grid grid grid grid grid grid grid grid";
-  grid-gap: 5px;
+display: grid;
+grid-template-columns:repeat(10,1fr);
+grid-template-rows: repeat(11,auto);
+grid-template-areas:
+"title title title title title title title title title title"
+"tutorial tutorial tutorial tutorial tutorial tutorial tutorial tutorial tutorial tutorial"
+"user user grid grid grid grid grid grid grid grid"
+"control control grid grid grid grid grid grid grid grid"
+"size size grid grid grid grid grid grid grid grid"
+"file file grid grid grid grid grid grid grid grid"
+"file file grid grid grid grid grid grid grid grid"
+"file file grid grid grid grid grid grid grid grid"
+"file file grid grid grid grid grid grid grid grid"
+"file file grid grid grid grid grid grid grid grid"
+"file file grid grid grid grid grid grid grid grid";
+grid-gap: 5px;
 }
 
 #greeting{
-  min-width: 200px;
-  margin:0px;
-  grid-area:user;
-  background-color: rgb(163, 196, 224);
-  height: 60px;
+min-width: 200px;
+margin:0px;
+grid-area:user;
+background-color: rgb(163, 196, 224);
+height: 60px;
 }
 
 .planGrid{
-  grid-area: size;
-  background-color: rgb(163, 196, 224);
-  padding-left: 10px;
-  padding-right: 5px;
-  height: 340px;
+grid-area: size;
+background-color: rgb(163, 196, 224);
+padding-left: 10px;
+padding-right: 5px;
+height: 340px;
 }
 
 .fileNavigation{
-  min-width: 200px;
-  margin: 0px;
-  grid-area: file;
-  background-color: rgb(163, 196, 224);
-  padding-left: 10px;
-  padding-right: 5px;
+min-width: 200px;
+margin: 0px;
+grid-area: file;
+background-color: rgb(163, 196, 224);
+padding-left: 10px;
+padding-right: 5px;
 }
 
 /*controls*/
 
 .controlBar{
-  min-width: 200px;
-  grid-area: control;
-  padding: 5px;
-  background-color: rgb(163, 196, 224);
+min-width: 200px;
+grid-area: control;
+padding: 5px;
+background-color: rgb(163, 196, 224);
 }
 
 .controlBar button{
-  height: 50px;
-  margin:0px;
-  width: 100%;
+height: 50px;
+margin:0px;
+width: 100%;
 }
 
 .build-content{
-  width: 100%;
-  min-height: 60px;
-  display:inline-block;
+width: 100%;
+min-height: 60px;
+display:inline-block;
 }
 
 #build-collapse{
-  background-color: white;
-  display:none;
-  width:95%;
-  padding: 5px;
+background-color: white;
+display:none;
+width:95%;
+padding: 5px;
 }
 
 .build-content:hover #build-collapse{
-  display:inline-block;
+display:inline-block;
 }
 
 .tutorial{
-  grid-area: tutorial;
-  margin-bottom: 20px;
+grid-area: tutorial;
+margin-bottom: 20px;
 }
 
 #tutorialButton{
-  width: 222px;
+width: 222px;
 }
 
 .tutorialContainer{
-  height: 300px;
-  display: none;
+height: 300px;
+display: none;
 }
 
 .tutorial:hover .tutorialContainer{
-  display: inline-block;
+display: inline-block;
 
 }
 
 /*Grid*/
 .emptyGrid {
-  grid-area: grid;
-  margin: 0px;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  align-items: center;
-  border: 2px solid black;
-  min-width: 970px;
-  max-width: 970px;
+grid-area: grid;
+margin: 0px;
+display: flex;
+flex-direction: column;
+gap: 2px;
+align-items: center;
+border: 2px solid black;
+min-width: 970px;
+max-width: 970px;
 }
 
 .row {
-  display: flex;
-  gap: 2px;
+display: flex;
+gap: 2px;
 }
 
 .col {
-  width: 20px;
-  height: 20px;
-  background-color: white;
-  border: 1px solid gray;
-  cursor: pointer;
+width: 20px;
+height: 20px;
+background-color: white;
+border: 1px solid gray;
+cursor: pointer;
 }
 /*---------------------------*/
 
 /*Map*/
 
 #mapPage{
-  padding-top: 110px;
+padding-top: 110px;
 }
 
 #mapPage main{
-  display:inline-block;
-  min-width:100%;
+display:inline-block;
+min-width:100%;
 }
 
 #mapPage h1 {
-  height: 100px;
-  text-align: center;
-  font-weight: normal;
-  background-color:rgba(106, 90, 165, 0.599);
-  margin-bottom: 30px;
+height: 100px;
+text-align: center;
+font-weight: normal;
+background-color:rgba(106, 90, 165, 0.599);
+margin-bottom: 30px;
 }
 
 .mapVillage{
-  background-image: linear-gradient(to bottom, transparent, transparent),  url('images/sample_village_map.png'); 
-  background-repeat: no-repeat;
-  width: 98%;
-  height: 900px;
-  transform: rotate(90deg); 
-  margin-top: 20%;  
+background-image: linear-gradient(to bottom, transparent, transparent),  url('images/sample_village_map.png'); 
+background-repeat: no-repeat;
+width: 98%;
+height: 900px;
+transform: rotate(90deg); 
+margin-top: 20%;  
 }
 
 .mapVillage p{
-  background-color: wheat;
-  width: 200px;
-  border-radius: 1.5em;
-  visibility: hidden;
+background-color: wheat;
+width: 200px;
+border-radius: 1.5em;
+visibility: hidden;
 }
 
 .mapVillage div{
-  width: 200px;
+width: 200px;
 }
 
 .mapVillage div:hover p{
-  visibility: visible;
+visibility: visible;
 }
 
 #smallHouse1{
-  transform: rotate(-90deg); 
-  position: relative;
-  top:525px;
-  left: 430px;
+transform: rotate(-90deg); 
+position: relative;
+top:525px;
+left: 430px;
 }
 
 #smallHouse2{
-  transform: rotate(-90deg); 
-  position: relative;
-  top: 263px;
-  left: 387px;
+transform: rotate(-90deg); 
+position: relative;
+top: 263px;
+left: 387px;
 }
 
 #medHouse1{
-  transform: rotate(-90deg); 
-  position: relative;
-  top:-40px;
-  left: 515px;
+transform: rotate(-90deg); 
+position: relative;
+top:-40px;
+left: 515px;
 }
 
 #blacksmith{
-  transform: rotate(-90deg); 
-  position: relative;
-  top:-30px;
-  left: 450px;
+transform: rotate(-90deg); 
+position: relative;
+top:-30px;
+left: 450px;
 } 
-
