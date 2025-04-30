@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Website Name - Home</title>
+	<script src="https://kit.fontawesome.com/d3a5d09fd6.js" crossorigin="anonymous"></script>
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href = "mine.css" type = "text/css">  
+  </head>
+  <body>
+	<header class="site-header">
+		<a href="home.html">
+			<img class="site-logo" src="images/site-logo.svg" alt="MineCraft_CrossRoads">
+		 </a>
+		<nav class="site-nav">
+			<a class = "navSite" id = "gall" href="gallery.html">Gallery</a>
+			<a class = "navSite" id = "rev" href="reviews.html">Reviews</a>
+			<a class = "navSite" id = "exp" href="3D.html">Experiment</a>  
+			<a class = "navSite" id = "map" href="map.html">Map</a>    	     	   
+			<a class = "navSite" id = "ab" href="about.html">About</a>	
+			<a  class = "navSite" id = "log" href="user.html">Log In/Sign Up</a>
+			<i id = "moon" class="fa-solid fa-moon"></i>
+			<input type="text" id="searchBar" name="searchBar" placeholder="  Search">
+		</nav>
+    </header>
+	<div class = "title">
+		<h1 class="primary-statement">Crossroads of Minecraft and Architecture</h1>
+		<p class="secondary-statement">Explore and experiment with some of the architectural 
+			elements and considerations in real-life designs that cross into the architecture of Minecraft builds, 
+			as well as the ones in Minecraft that don't. Two paths, so many crossroads! </p>
+	</div>
+    <div class="wrapper" id = "home">
+	  <main>
+        <section class="lead">
+			<div class="lead-display">
+				<img class = "lead-image" src="images/lead.jpg" alt="The Minecraft Architect">
+			</div>
+			<p>When we started playing Minecraft, we were dazzled by the worlds people had made.  
+				They were amazing because someone imagined them in every detail and brought them to life for others to enjoy, 
+				much like how architects design the public and private infrastructure of our world to be shared with our communities.</p> 
+			<p>However, unlike our world, Minecraft boasts creation without as many physical constraints. 
+				What then makes up a creator's process? How do creators dazzle like those in our world? 
+				Minecraft Crossroads wants to explore that difference and analyze the “Minecraft architect.” 
+				In our pages, you'll find our explorations of example builds, analysis of real-life architectural elements 
+				and their Minecraft counterparts, resources to connect explorations with their online roots, 
+				and much more! We also have a place to experiment on your own to expand our explorations, 
+				giving a unique space to mess with your inner architect as we do ours. </p>
+			<br>
+		</section>
+		<section class="showcase">
+			<h2>To Which CrossRoad Will You Travel?</h2>
+
+			<div class = "showContainer">
+				<div class="showcase-item" id="showcase-item-1">
+					<h3>Experiments</h3>
+					<!-- image -->
+					<a href="3D.html"><img src="images/create.png" alt="You, the Architect"></a>
+					<div class = "description"><p>Part of being a "Minecraft Architect" is being an architect! 
+						Explore the elements we analyzed by crafting your own builds! 
+						Use our tool to plan whatever you like and see it in 3D.</p></div>
+					<p><a href="3D.html">Experiment With Your Findings</a></p>
+				</div>
+				<div class="showcase-item" id="showcase-item-2">
+					<h3>Analysis</h3>
+					<a href="gallery.html"><img src="images/compare.png" alt="Comparing Worlds"></a>
+					<div class = "description">
+					<p>See how we break down Minecraft builds by element (roofs, windows, etc.)
+						and compare their popular implementations to those in real-life examples.</p></div>
+					<p><a href="gallery.html">Analyze Our Worlds</a></p>
+				</div>
+				<div class="showcase-item" id="showcase-item-3">
+					<h3>Reviews</h3>
+					<a href="reviews.html"><img src="images/books.png" alt="Reviews"></a>
+					<div class = "description">
+						<p>Part of analyzing is critiquing and reviewing the resources around us to clarify our understanding.
+						Check out some of our reviews, narrative and otherwise.</p> </div>
+					<p><a href="reviews.html">Review Our Reviews</a></p>
+				</div>
+			</div>
+		</section>
+      </main>
+	</div>
+	<footer class = "footer">
+		<p>&copy; 2025 by MineCraft_CrossRoads. All rights reserved.</p>
+		<a href = "https://www.linkedin.com/in/lavanya-rao-512988290/" target = "_blank">Linkedin</a>
+		<a href = "https://github.com/LRao21" target = "_blank">Github</a>
+		<a href = "#footer" target = "_blank">Instagram</a>
+		<p>Privacy Policy </p>
+		<p>Terms and Conditions</p>
+	  </footer> 
+	  <script src="myScript.js"></script>
+  </body>
+</html>

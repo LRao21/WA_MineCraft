@@ -1,0 +1,279 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Website Name - Reviews</title>
+	<script src="https://kit.fontawesome.com/d3a5d09fd6.js" crossorigin="anonymous"></script>
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href = "mine.css" type = "text/css">  
+  </head>
+  <body>
+	<header class="site-header">
+		<a href="home.html">
+			<img class="site-logo" src="images/site-logo.svg" alt="MineCraft_CrossRoads">
+		 </a>
+		<nav class="site-nav">
+			<a class = "navSite" id = "gall" href="gallery.html">Gallery</a>
+			<a class = "navSite" id = "rev" href="reviews.html">Reviews</a>
+			<a class = "navSite" id = "exp" href="3D.html">Experiment</a>  
+			<a class = "navSite" id = "map" href="map.html">Map</a>    	     	   
+			<a class = "navSite" id = "ab" href="about.html">About</a>	
+			<a  class = "navSite" id = "log" href="user.html">Log In/Sign Up</a>
+			<i id = "moon" class="fa-solid fa-moon"></i>
+			<input type="text" id="searchBar" name="searchBar" placeholder="  Search">
+		</nav>
+    </header>
+    <div class="wrapper" id = "reviews">
+		<main>
+			<h1> Reviews</h1>
+			<section class="filters">
+				<div class = "optionsContainer">
+					<button class="filterButton" onclick = "restoreAllReviews()">Reset</button>
+					<button class="filterButton" onclick = "sortByDate()">Order by Date</button>
+					<button class="filterButton" onclick = "sortByName()">Order by Title</button>
+					<div class = "dropdown">
+						<button class="dropDownFilter">Filter By Tag</button>
+						<div id="filters" class="dropdown-content">
+							<p onclick = "removeNotInGame()">In-Game Structures</p>
+							<p onclick = "removeNotVillage()">Village Structures</p>
+							<p onclick = "removeNotResource()">Minecraft Resources</p>
+							<p onclick = "removeNotFeatures()">Minecraft Features</p>
+							<p onclick = "removeNotExperience()">In-Game Experiences</p>
+							<p onclick = "removeNotTutorial()">Tutorial Experiences</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class = "reviewContent">
+				<div class = "reviewContainer">
+					<div class = "aReview" id = "rev1">
+						<button type="button" class="collapsible">
+							<h3>The Minecraft Construction Handbook: A Place of Inspiration </h3>
+						</button>
+						<article class = "review">					
+								<img src = "images/handbook.png" alt ="handbook" style = "float: left; border: 10px solid rgb(97, 44, 106); margin-right: 20px; width: 200px; height: 300px;">
+								
+								<p>In 2013, <a href = "https://en.wikipedia.org/wiki/Mojang_Studios" target = "_blank">Mojang</a>released<a href = "https://www.amazon.com/MINECRAFT-OFFICIAL-MOJANG-HANDBOOK-SET/dp/B00JAWN99S?gQT=2" target = "_blank">several handbooks</a>to help new players better understand Minecraft's mechanics and the 
+									possibilities that came with its style of gameplay, later updating them in 2015. 
+									One of the two released was the <a href = "https://archive.org/details/MCCSNHandbook/mode/2up" target = "_blank">“Minecraft Construction Handbook”</a> (left), 
+									a 105-page handbook focused on providing some build ideas for players, such as houses, gardens, and bridges. Overall, the handbook provides a set of instructions to build a 
+									few specific basic buildings, which are helpful for players getting started as the images provide clear 
+									ideas of what each step should look like, as well as a final version of the model situation in the game, 
+									thus removing uncertainty with outcomes, materials, and planning. 
+									Additionally, it also hosts several examples from more experienced builders, inspiring new players to create as they 
+									like by making them realize the vast creative power the game provides.</p>
+
+									<img src = "images/woodenhouse.png" alt ="house instructions" style = "float: right; border: 10px solid rgb(97, 44, 106); margin-left: 20px; width: 500px; height: 300px;">
+
+								<p>To elaborate on the qualities of instruction sets, the book breaks down builds by major construction. 
+									As an example, in the <a href = "https://archive.org/details/MCCSNHandbook/page/n11/mode/2up" target = "_blank">“Wooden House”</a> (right), Mojang broke down the build into 8 steps,
+									each relating to a milestone in the build, such as creating the base and starting the roof. 
+									The pictures made it easier for me to follow along as I could visually compare my progress with theirs. 
+									They also explained why some steps were done, which helped me make sure I didn't do something that 
+									I would regret later, like making the base too short and thus cramped later, as they warned. 
+									The only downside to their focus on visual milestones is that I didn't have exact measurements. 
+									How many blocks wide was their base? 4 by 5 blocks? 10 by 12? 
+									The most I could do was guess by counting the blocks in the images, but that also means I could have run into 
+									issues later if I had miscounted. Although this may not apply to everyone, trying to complete a build only to 
+									find that I made an avoidable mistake would have been disheartening. Overall, the encouraging style of the book's 
+									instructions makes it worth a try, in my opinion. Although it does not cover key concepts in building, 
+									like planning or color choice, it gives players the confidence to try their best and find out what they 
+									like on their own.</p>
+
+									<img src = "images/garden.png" alt ="garden example" style = "float: left; border: 10px solid rgb(97, 44, 106); margin-right: 20px;margin-bottom: 10px; width: 400px; height: 250px;">
+									<img src = "images/palace.png" alt ="palace example" style = "float: left; border: 10px solid rgb(97, 44, 106); margin-right: 20px; width: 400px; height: 250px;">
+
+								<p>On that note, its examples from other players surely help in the “find your style” approach to building. 
+									After each instruction set, Mojang provides some example builds from creators in the community, such as an 
+									example garden and a massive palace (left)! First, the examples are not all equal. Some are simpler while others 
+									are grand, giving a more rounded idea of what building in Minecraft may look like, and thus reassuring that any 
+									level of creativity belongs in Minecraft. Personally, I think I can handle creating the<a href = "https:/www.planetminecraft.com/project/stream-cottage" target = "_blank">example garden made by HalfDemonAnbu</a>, 
+									and that palace by<a href = "https://www.youtube.com/user/FyreUK" target = "_blank">Fyreuk</a>left me in awe!</p>
+									
+								<p>Although the handbook does not go into detail about how it was built, it does throw in some tips the creator learned 
+									while making it. Leaving out the instructions might make the book much better than if they were included.
+									As someone still trying to master building, seeing those grander builds is inspiring! 
+									I want to be able to build something like that, but I also question how. 
+									I need to plan and think it through first, thus making any result of it my own rather than a copy of someone else's. 
+									That feeling is the essence of building: to build as you are! However, I do wish they provided more instructional sets.
+									Inspiration is just as wonderful as guidance is. </p>
+									
+								<p>In summation, when it comes to inspiring one's inner creator, this book gets the job done. 
+									Its instructions are visually helpful and paced well, making them easier for a new player to follow. 
+									Without taking away from those sets, the book's examples also do well to inspire one to build grand and as they see
+									beautiful without hinting at what beautiful can be, fueling players to truly enjoy their creative processes. 
+									However, the book still lacks specificity in places where it could have been easily added, 
+									which can make the process of following their advice frustrating at times. 
+									Nonetheless, the joy the book can bring is well worth it. The pages really do fly by while having fun!</p>
+						</article>
+						<div class = "meta-content">
+							<table class = "context">
+								<tr>
+								<th>Tags</th>
+								<td><p class = "Minecraft_Resources">Minecraft Resources</p></td>
+								</tr>
+								<tr>
+									<th>Date</th>
+									<td class = "date">03/26/2025</td>
+								</tr>
+								<tr>
+									<th>Item Data</th>
+									<td>Title - Minecraft: Construction Handbook; <br> 
+										Authors - Matthew Needler, Phil Southam; <br> 
+										Publication Date - August 26, 2014, updated July 28, 2015; <br> 
+										Page Count - 105; <br> 
+										Forms - Hardcover, Paperback, Virtual/Online</td>
+								</tr>
+								<tr>
+								<th>Further Resources</th>
+								<td><a href = "https://minecraft.fandom.com/wiki/Minecraft_Books" target = "_blank">To Find More Books</a></td>
+								</tr>
+								<tr>
+								<th>Credits</th>  
+								<td><a href = "https://archive.org/details/MCCSNHandbook/mode/2up" target = "_blank">(Images) (Source) The Internet Archive</a>, The Minecraft Wiki(s), Wikipedia</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div class = "aReview" id = "rev2">
+						<button type="button" class="collapsible">
+							<h3> The Plains Biome House #5 From the Perspective of a “Home Buyer”: A Better Lodging Than Most, But Nonetheless Disappointing </h3>
+						</button>
+						<article  class = "review">
+							
+							<img src = "images/villagehouse5.png" alt ="Village House #5" style = "float: left; border: 10px solid rgb(97, 44, 106); margin-right: 20px; width: 180px; height: 200px;">
+						
+						<p>Hello all! Today, I continued my search for lodging in the world I call my home! 
+							After some searching, I was able to contact a wonderful salesman, Jeffrey. 
+							Shout out to Jeffrey for his many tips and vast knowledge. 
+							After some discussion, Jeffrey recommended I take a look at <a href = "https://minecraft.fandom.com/wiki/Village/Structure/Blueprints/Plains_small_house_5_blueprint" target = "_blank">“House #5”</a>(left) in 
+							the<a href = "https://minecraft.fandom.com/wiki/Plains" target = "_blank">Plains Biome!</a> 
+							Most villages seemed rather full, but he was able to find a vacant one nearby for me to view! 
+							From the outside, the house has two floors, a balcony on the second floor, and many windows on the first floor. 
+							Given it is in the Plains Biome, it has grassy surroundings, and weather that was not terribly hot or cold, 
+							seeing at most the occasional rain falls. 
+							Exterior-wise, the color picks are beautiful--not too bold but also easy on the eyes. 
+							The interior left me disappointed, in contrast.</p>
+
+							<img src = "images/h5Interiorfirstfloor.png" alt ="first floor" style = "float: right; border: 10px solid rgb(97, 44, 106); margin-bottom: 5px; margin-left: 20px; width: 300px; height: 180px;">
+
+						<p>To elaborate, Jeffrey took the time to visit the house with me, pointing out many of its features. 
+							Regarding the first floor (right), I was excited to find that the windows let in a lot of natural light. 
+							However, their positioning made it so most of the light would come in during the evenings, 
+							which was slightly disappointing, as having consistent lighting would have made it much cozier. 
+							Jeffrey assured me nonetheless that the rooms had ample torches, so I would not have to worry about any 
+							<a href = "https://www.minecraft.net/en-us/article/minecraft-mobs" target = "_blank">hostile mobs</a> attacking my home, as they would 
+							be<a href = "https://minecraft.wiki/w/Light" target = "_blank">well-lit regardless of the time of day.</a> 
+							Furniture wise, I did appreciate the table and couch. Although I wish they did provide a larger table, 
+							I can also easily create one myself. The extra seating would let me have friends over. 
+							Oh, the get-togethers we could have! The room itself is also decently spacious (a bit larger than 5 by 5 blocks), 
+							which is a plus, as other houses I have seen have been a bit cramped and only fit a bed and a single chest for
+							my belongings (normally 3 by 3 blocks). The room was also of decent height (4 blocks), 
+							so I could move around with ease. The only thing that irked me was the presence of a bed. 
+							Given that the building had two floors, I was expecting this sort of furniture to be upstairs. </p>
+
+							<img src = "images/h5Interiorsecondfloor.png" alt ="handbook" style = "float: left; border: 10px solid rgb(97, 44, 106); margin-right: 20px; margin-bottom: 10px; width: 300px; height: 180px">
+
+						<p>Now, cue my disappointment. The second “floor” (left) was really a narrow pathway leading to the balcony. 
+							The space is surely enough for those who would use the balcony mainly to fight off hostile mobs safely, 
+							as there was enough space on the balcony (2-block width instead of 1 like the second floor) to 
+							move around freely to shoot creatures with arrows. 
+							However, I was hoping for more space as I want to decorate their lodging. 
+							Where will my gardens, pictures, and chests go? 
+							Furthermore, people being able to look through the windows on the first floor and see me 
+							sleeping is not particularly pleasant to me. 
+							A thing to note is that the floor is expandable 
+							if one has the trees nearby to gather wood to create and place more planks. All one has to do is find a nearby tree (which may be easy or difficult depending on 
+							where in the plaines biome one is), take an axe to its side, and collect the wood to craft planks.
+							That is something I kept in mind, as at least I could transform the space rather than being stuck with this lackluster floor plan. </p>
+							
+						<p>Overall, House #5 in the Plains Biome is a decent lodging. 
+							The surroundings are nice and decently orderly, the exterior is pleasing (to my eye at least), 
+							and the first floor is well lit, spacious, and does come with some nice furniture. 
+							Although I was disappointed with the small size of the second floor, 
+							the expandability of it does make up for it if one is willing to put the time into it. 
+							Ultimately, I decided to go with the house, so my house-buying adventures end here! 
+							Off to find some wood now to fix that poor second floor. </p>
+						</article>
+						<div class = "meta-content">
+							<table class = "context">
+								<tr>
+								<th>Tags</th>
+								<td><p class = "Village_Structures">Village Structures</p><p class = "In-Game_Structures">In-Game Structures</p></td>
+								</tr>
+								<tr>
+									<th>Date</th>
+									<td class = "date">03/26/2025</td>
+								</tr>
+								<tr>
+									<th>Item Data</th>
+									<td>Location - Plains Biome; <br> 
+										Structure Collection - Village; <br> 
+										Resident Occupation - Null; <br> 
+										Floor Count - 2; <br> 
+										Materials - Cobblestone, Oak wood planks, doors, stairs, and fences; <br> 
+										Lighting source - torches</td>
+								</tr>
+								<tr>
+								<th>Further Resources</th>
+								<td><a href = "•	https://minecraft.wiki/w/Village/Structure/Blueprints#Medium_House_3" target = "_blank">Other Village Structures</a></td>
+								</tr>
+								<tr>
+								<th>Credits</th>  
+								<td><a href = "https://www.youtube.com/watch?v=gHpVoBPfHZ0" target = "_blank">(Images) Peachester</a>, The Minecraft Wiki(s)</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class = "micro-reviews">
+					<h3>Micro Reviews</h3>
+					<div class = micro-item> 
+						<h4>Towering Roofs</h4>
+						<p>I remember the first time I saw someone post their most recent project online. The first thing that captivated me 
+							was the huge roofs on their towers. It felt like an exagerated mediveal-themed day dream for someone learning about 
+							that style of build, making the moment all the more awe-filled. The best point of that sort of design is the asthetic.
+							It's beautiful, grand, and well-fitting on just as intricate towers-especially when built into a larger world design.
+							However, I can't find much use for it. When I went to make my own, I realized how small they can really be if your tower
+							isn't incredibly large as its size partly depends on its base. Lighting was difficult too as the area for lighting decreases 
+							with each extension of the tower. Nonetheless, if planned right, it is possible to make them a useful elements of the tower.
+							Personally, I will just seal mine off and hope for the best. You can't replace the view a pretty, tall roof on a mythical tower.
+						</p>
+					</div>
+					<div class = micro-item> 
+						<h4>Birch Wood</h4>
+						<p>Birch Wood is a type of wood available in Minecraft's forests, birch forests, dark forests, and meadows.
+							When made into planks, it gets a rather light color close to a white or a cream. Given its different color
+							from other woods in the game, it can be difficult to include in builds that darker asthetic pallets, 
+							limiting its use to builds focusing on brighter pallets on some occasions. Personally, for a while I 
+							agreed with this as I too like those pallets. Nonetheless, I have some to see the block differently now,
+							and would argue that difference actually gives it value because it acts then as a supplementary block 
+							instead of a main pallet color. I like to use it to highlight certain shapes in builds that more uniform pallets, like stairs in a house
+							with an exceptionally dark theme. The contrast gives more color to the space, making the planks live up to its 
+							reputation as a less useful wood type but with a twist as it provides a sense of duality while being easy on the eyes.
+						</p>
+					</div>
+					<div class = micro-item> 
+						<h4>...</h4>
+					</div>
+				</div>
+			</section>
+		</main>
+	</div> 
+	<footer class = "footer">
+		<p>&copy; 2025 by MineCraft_CrossRoads. All rights reserved.</p>
+		<a href = "https://www.linkedin.com/in/lavanya-rao-512988290/" target = "_blank">Linkedin</a>
+		<a href = "https://github.com/LRao21" target = "_blank">Github</a>
+		<a href = "#footer" target = "_blank">Instagram</a>
+		<p>Privacy Policy </p>
+		<p>Terms and Conditions</p>
+	  </footer> 
+
+	  <script src="scripts.js"></script>
+  </body>
+</html>
