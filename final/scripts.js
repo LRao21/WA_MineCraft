@@ -2083,7 +2083,22 @@ function setUpDefault(){
                         cursorDataDiv.style.top = event.pageY + 10 + "px";  
                     });
                 });
-    
+                document.getElementById(cellIndex).addEventListener("click", function() {
+                  if (default_village.builds[bL].title == "pathway"){
+                    window.location.hash = "#path";
+                  } else if (default_village.builds[bL].title == "animal pen"){
+                    window.location.hash = "#animalPen";
+                  } else if (default_village.builds[bL].title == "armorer's house"){
+                    window.location.hash = "#armorer";
+                  } else if (default_village.builds[bL].title == "large house"){
+                    window.location.hash = "#largeHouse1";
+                  } else if (default_village.builds[bL].title == "temple"){
+                    window.location.hash = "#temple";
+                  } else if (default_village.builds[bL].title == "library"){
+                    window.location.hash = "#library";
+                  }
+                });
+
                 document.getElementById(cellIndex).addEventListener("mouseleave", function() {
                     cursorDataDiv.style.display = "none";
                 });
