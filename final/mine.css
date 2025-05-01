@@ -979,20 +979,19 @@ a:hover{
 
 .defaultData{
   display: grid;
-  grid-template-columns:repeat(5,auto);
-  grid-template-rows: repeat (2,1fr);
+  grid-template-columns:repeat(2,1fr);
+  grid-template-rows: repeat(5,auto);
   grid-template-areas:
   "legend legend"
   "title title"
   "item1 item2"
   "item3 item4"
   "item5 item6";
-  grid-gap: 20px;
+  grid-gap: 30px;
   display:none;
 }
 
 #legendMap{
-  align-items: left;
   grid-area:legend;
 }
 
@@ -1026,6 +1025,10 @@ a:hover{
   font-size: 26px;
   line-height:150%;
   text-align: center;
+}
+
+.profile p{
+  grid-area: text;
 }
 
 #animalPen{
