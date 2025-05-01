@@ -2018,6 +2018,8 @@ const default_village = {
 
 let mapGroups = default_village.builds;
 
+const cursorDataDiv = document.getElementById("cursorData");
+
 /*FOR MAP*/
 function setUpDefault(){
     var index = 0;
@@ -2041,7 +2043,7 @@ function setUpDefault(){
     }
     console.log("made grid");
 
-    for (var bL = 0; bL < default_village.builds.length; bL++){
+    for (let bL = 0; bL < default_village.builds.length; bL++){
         for (var c = 0; c < default_village.builds[bL].cells.length; c++){
             var cellsFrom = default_village.builds[bL].cells[c];
             if (cellsFrom!=null){
@@ -2059,6 +2061,20 @@ function setUpDefault(){
                 } else if (c==0 && default_village.builds[bL].type == "public"){
                     document.getElementById(cellIndex).innerHTML = "<i style = 'color:pink'; <i class='fa-solid fa-book'></i>";
                 }
+                document.getElementById(cellIndex).addEventListener("mouseover", function(event) {
+                    cursorDataDiv.style.display = "block";
+                    cursorDataDiv.innerHTML = "Title: " + String(default_village.builds[bL].title);
+
+                    document.addEventListener("mousemove", function(event) {
+                        cursorDataDiv.style.left = event.pageX + 10 + "px";  
+                        cursorDataDiv.style.top = event.pageY + 10 + "px";  
+                    });
+                });
+    
+                document.getElementById(cellIndex).addEventListener("mouseleave", function() {
+                    cursorDataDiv.style.display = "none";
+                });
+    
             } else {
                 console.log("cell is null!");
             }
