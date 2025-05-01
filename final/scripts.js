@@ -2048,6 +2048,17 @@ function setUpDefault(){
                 var cellIndex = cellsFrom.index + "Map";
                 document.getElementById(cellIndex).style.backgroundColor = "purple";
                 console.log("made " + cellIndex + " purple!");
+                if (c==0 && default_village.builds[bL].type == "Path"){
+                    document.getElementById(cellIndex).innerHTML = "<i style = 'color:pink'; class='fa-solid fa-road-circle-check'></i>";
+                } else if (c==0 && default_village.builds[bL].type == "animal_pen"){
+                    document.getElementById(cellIndex).innerHTML = "<i style = 'color:pink'; <i class='fa-solid fa-shield-cat'></i>";
+                } else if (c==0 && default_village.builds[bL].type == "lodging"){
+                    document.getElementById(cellIndex).innerHTML = "<i style = 'color:pink'; <i class='fa-solid fa-house'></i>";
+                } else if (c==0 && default_village.builds[bL].type == "religion"){
+                    document.getElementById(cellIndex).innerHTML = "<i style = 'color:pink'; <i class='fa-solid fa-person-praying'></i>";
+                } else if (c==0 && default_village.builds[bL].type == "public"){
+                    document.getElementById(cellIndex).innerHTML = "<i style = 'color:pink'; <i class='fa-solid fa-book'></i>";
+                }
             } else {
                 console.log("cell is null!");
             }

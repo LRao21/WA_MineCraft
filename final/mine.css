@@ -932,6 +932,7 @@ a:hover{
 #mapPage main{
   display:inline-block;
   min-width:100%;
+  min-height: 800px;
 }
 
 #mapPage h1 {
@@ -952,6 +953,7 @@ a:hover{
   font-size: 17px;
   background-color: transparent;
   border: 2px solid rgb(218, 99, 218);
+  margin-bottom: 20px;
 }
 
 #mapPage button:hover{
@@ -964,3 +966,13 @@ a:hover{
   margin: auto;
 }
 
+#cursorData {
+  position: absolute;
+  pointer-events: none; 
+  background-color: rgba(0, 0, 0, 0.7); 
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 14px;
+  display: none;
+}
