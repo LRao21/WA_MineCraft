@@ -966,6 +966,10 @@ a:hover{
   margin: auto;
 }
 
+#legendMap{
+  align-items: left;
+}
+
 #cursorData {
   position: absolute;
   pointer-events: none; 

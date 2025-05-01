@@ -2050,20 +2050,22 @@ function setUpDefault(){
                 var cellIndex = cellsFrom.index + "Map";
                 document.getElementById(cellIndex).style.backgroundColor = "purple";
                 console.log("made " + cellIndex + " purple!");
-                if (c==0 && default_village.builds[bL].type == "Path"){
-                    document.getElementById(cellIndex).innerHTML = "<i style = 'color:pink'; class='fa-solid fa-road-circle-check'></i>";
-                } else if (c==0 && default_village.builds[bL].type == "animal_pen"){
-                    document.getElementById(cellIndex).innerHTML = "<i style = 'color:pink'; <i class='fa-solid fa-shield-cat'></i>";
-                } else if (c==0 && default_village.builds[bL].type == "lodging"){
-                    document.getElementById(cellIndex).innerHTML = "<i style = 'color:pink'; <i class='fa-solid fa-house'></i>";
-                } else if (c==0 && default_village.builds[bL].type == "religion"){
-                    document.getElementById(cellIndex).innerHTML = "<i style = 'color:pink'; <i class='fa-solid fa-person-praying'></i>";
-                } else if (c==0 && default_village.builds[bL].type == "public"){
-                    document.getElementById(cellIndex).innerHTML = "<i style = 'color:pink'; <i class='fa-solid fa-book'></i>";
-                }
+        
                 document.getElementById(cellIndex).addEventListener("mouseover", function(event) {
+                    cursorDataDiv.style.fontSize = "22px";
                     cursorDataDiv.style.display = "block";
-                    cursorDataDiv.innerHTML = "Title: " + String(default_village.builds[bL].title);
+                    if (default_village.builds[bL].type == "Path"){
+                        cursorDataDiv.innerHTML = "<i style = 'color:pink'; class='fa-solid fa-road-circle-check'></i>";
+                    } else if (default_village.builds[bL].type == "animal_pen"){
+                        cursorDataDiv.innerHTML = "<i style = 'color:pink'; class='fa-solid fa-shield-cat'></i>";
+                    } else if (default_village.builds[bL].type == "lodging"){
+                        cursorDataDiv.innerHTML = "<i style = 'color:pink'; class='fa-solid fa-house'></i>";
+                    } else if (default_village.builds[bL].type == "religion"){
+                        cursorDataDiv.innerHTML = "<i style = 'color:pink'; class='fa-solid fa-person-praying'></i>";
+                    } else if (default_village.builds[bL].type == "public"){
+                        cursorDataDiv.innerHTML = "<i style = 'color:pink'; class='fa-solid fa-book'></i>";
+                    }
+                    cursorDataDiv.innerHTML += ", Title: " + String(default_village.builds[bL].title);
 
                     document.addEventListener("mousemove", function(event) {
                         cursorDataDiv.style.left = event.pageX + 10 + "px";  
