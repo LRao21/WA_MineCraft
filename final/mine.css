@@ -942,55 +942,25 @@ a:hover{
   margin-bottom: 30px;
 }
 
-.mapVillage{
-  background-image: linear-gradient(to bottom, transparent, transparent),  url('images/sample_village_map.png'); 
-  background-repeat: no-repeat;
-  width: 98%;
-  height: 900px;
-  transform: rotate(90deg); 
-  margin-top: 20%;  
+#mapPage button{
+  padding: 5px;
+  font-family: "Roboto";
+  text-decoration: none;
+  background-color: rgb(194, 89, 194);
+  color:rgb(104, 48, 104);
+  font-weight: bold;
+  font-size: 17px;
+  background-color: transparent;
+  border: 2px solid rgb(218, 99, 218);
 }
 
-.mapVillage p{
-  background-color: wheat;
-  width: 200px;
-  border-radius: 1.5em;
-  visibility: hidden;
+#mapPage button:hover{
+  background-color: rgba(104, 48, 104, 0.338);
 }
 
-.mapVillage div{
-  width: 200px;
+#forMap{
+  min-width: 800px;
+  min-height: 100px;
+  margin: auto;
 }
-
-.mapVillage div:hover p{
-  visibility: visible;
-}
-
-#smallHouse1{
-  transform: rotate(-90deg); 
-  position: relative;
-  top:525px;
-  left: 430px;
-}
-
-#smallHouse2{
-  transform: rotate(-90deg); 
-  position: relative;
-  top: 263px;
-  left: 387px;
-}
-
-#medHouse1{
-  transform: rotate(-90deg); 
-  position: relative;
-  top:-40px;
-  left: 515px;
-}
-
-#blacksmith{
-  transform: rotate(-90deg); 
-  position: relative;
-  top:-30px;
-  left: 450px;
-} 
 
