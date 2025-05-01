@@ -14,7 +14,35 @@ let pw = "";
 let temp = "";
 
 let groups = [];
-let builds = [];
+
+/*FOR FILE HANDLING*/
+function createFile(){
+    const currentGrid = document.getElementsByClassName("emptyGrid")[0];
+    var width = 0;
+    var height = 0;
+    if (currentGrid.children!=null){
+        width = currentGrid.children.length;
+        if (currentGrid.children[0]!=null){
+            height = currentGrid.children[0].children.length;
+        }
+    }
+    console.log("width: " + width);
+    console.log("height: " + height);
+
+    const myFile = {};
+    myFile.width = width;
+    myFile.height = height;
+    myFile.builds = groups;
+    console.log("made file");
+    const jsonString = JSON.stringify(myFile, null, 2);
+    const blob = new Blob([jsonString], { type: "application/json" });
+    console.log("made blob");
+    const a = document.getElementById("jsonFile");
+    a.href = URL.createObjectURL(blob);
+    a.download = "your_build.json";
+    setTimeout(() => URL.revokeObjectURL(url), 100);
+    console.log("done with file");
+}
 
 /* FOR GRID */
 function saveLayer(){
