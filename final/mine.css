@@ -930,9 +930,9 @@ a:hover{
 }
 
 #mapPage main{
-  display:inline-block;
+  display:block;
   min-width:100%;
-  min-height: 800px;
+  /* min-height: 800px; */
 }
 
 #mapPage h1 {
@@ -966,10 +966,6 @@ a:hover{
   margin: auto;
 }
 
-#legendMap{
-  align-items: left;
-}
-
 #cursorData {
   position: absolute;
   pointer-events: none; 
@@ -979,4 +975,77 @@ a:hover{
   border-radius: 5px;
   font-size: 14px;
   display: none;
+}
+
+.defaultData{
+  display: grid;
+  grid-template-columns:repeat(5,auto);
+  grid-template-rows: repeat (2,1fr);
+  grid-template-areas:
+  "legend legend"
+  "title title"
+  "item1 item2"
+  "item3 item4"
+  "item5 item6";
+  grid-gap: 20px;
+}
+
+#legendMap{
+  align-items: left;
+  grid-area:legend;
+}
+
+#profileTitle{
+  grid-area:title;
+  font-size: 30px;
+}
+
+.profile{
+  background-color: wheat;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2,auto);
+  grid-template-areas:
+  "title title title title"
+  "image text text text";
+  grid-gap: 15px;
+  padding: 10px;
+}
+
+.profile img{
+  grid-area:image;
+  max-height: 300px;
+  max-width:200px;
+  margin:auto;
+}
+
+.profile h3{
+  grid-area: title;
+  font-size: 26px;
+  line-height:150%;
+  text-align: center;
+}
+
+#animalPen{
+  grid-area:item1;
+}
+
+#path{
+  grid-area:item2;
+}
+
+#largeHouse1{
+  grid-area:item3;
+}
+
+#temple{
+  grid-area:item4;
+}
+
+#library{
+  grid-area:item5;
+}
+
+#armorer{
+  grid-area:item6;
 }
