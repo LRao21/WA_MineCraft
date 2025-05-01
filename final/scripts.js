@@ -1293,7 +1293,7 @@ const default_village = {
         "516"
       ],
       "gridSlot": 9,
-      "title": "armorer’s house",
+      "title": "armorer's house",
       "type": "lodging"
     },
     {
@@ -2054,18 +2054,29 @@ function setUpDefault(){
                 document.getElementById(cellIndex).addEventListener("mouseover", function(event) {
                     cursorDataDiv.style.fontSize = "22px";
                     cursorDataDiv.style.display = "block";
+                    image = "";
                     if (default_village.builds[bL].type == "Path"){
                         cursorDataDiv.innerHTML = "<i style = 'color:pink'; class='fa-solid fa-road-circle-check'></i>";
+                        image = "images/dirtPath.jpeg"
                     } else if (default_village.builds[bL].type == "animal_pen"){
                         cursorDataDiv.innerHTML = "<i style = 'color:pink'; class='fa-solid fa-shield-cat'></i>";
+                        image = "images/animal_pen.png"
                     } else if (default_village.builds[bL].type == "lodging"){
                         cursorDataDiv.innerHTML = "<i style = 'color:pink'; class='fa-solid fa-house'></i>";
+                        if (default_village.builds[bL].title == "armorer's house"){
+                          image = "images/armorer.png"
+                        } else if (default_village.builds[bL].title == "large house"){
+                          image = "images/bigHouse1.png"
+                        }
                     } else if (default_village.builds[bL].type == "religion"){
                         cursorDataDiv.innerHTML = "<i style = 'color:pink'; class='fa-solid fa-person-praying'></i>";
+                        image = "images/temple.png"
                     } else if (default_village.builds[bL].type == "public"){
                         cursorDataDiv.innerHTML = "<i style = 'color:pink'; class='fa-solid fa-book'></i>";
+                        image = "images/library.png"
                     }
                     cursorDataDiv.innerHTML += ", Title: " + String(default_village.builds[bL].title);
+                    cursorDataDiv.innerHTML +="<img style = 'width: 200px; height: 250px;' src = '" + image + "'>";
 
                     document.addEventListener("mousemove", function(event) {
                         cursorDataDiv.style.left = event.pageX + 10 + "px";  
