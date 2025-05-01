@@ -2082,6 +2082,10 @@ function setUpDefault(){
             }
         }
     }
+    const profiles = document.getElementsByClassName("defaultData")[0];
+    if (profiles!=null){
+        profiles.style.display = "grid";
+    }
 }
 
 function createFromFile(){

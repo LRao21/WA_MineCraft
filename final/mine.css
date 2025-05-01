@@ -988,6 +988,7 @@ a:hover{
   "item3 item4"
   "item5 item6";
   grid-gap: 20px;
+  display:none;
 }
 
 #legendMap{
@@ -1014,9 +1015,10 @@ a:hover{
 
 .profile img{
   grid-area:image;
-  max-height: 300px;
-  max-width:200px;
+  height: 250px;
+  width: 200px;
   margin:auto;
+  border: 10px solid rgb(212, 187, 140);
 }
 
 .profile h3{
