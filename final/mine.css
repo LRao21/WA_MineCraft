@@ -178,9 +178,9 @@ a:hover{
 
     display: grid;
     gap: 0.5em 0.5em;
-    grid-template-columns: repeat(9,1fr);
+    grid-template-columns: repeat(10,1fr);
     grid-template-rows: auto;
-    grid-template-areas: "gall rev exp map ab log log moon search";
+    grid-template-areas: "gall rev exp map ab build build log log search";
   
     text-align: center;
 
@@ -207,7 +207,7 @@ a:hover{
 }
 
 #searchBar{
-    grid-area: "search";
+    grid-area: search;
 
     border-radius: 1.5em;
 
@@ -215,18 +215,8 @@ a:hover{
     padding-right: 10px;
 }
 
-#moon{
-    grid-area: "moon";
-    margin-top:10%;
-    float:right;
-    visibility: visible;
-    color: grey;
-}
-
-#sun{
-    margin-top:9px;
-    float:right;
-    visibility: hidden;
+#build{
+  grid-area: build;
 }
 /*---------------------*/
 
