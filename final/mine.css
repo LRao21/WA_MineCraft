@@ -759,10 +759,13 @@ margin-bottom: 30px;
 .gallery-card p{
   margin: auto;
 }
+
 /* Gallery */
 .gallery-grid {
 display: grid;
 grid-template-columns: auto auto;
+grid-template-rows: auto auto auto;
+
 grid-row-gap: 10px;
 grid-column-gap: 15px;
 justify-items: center;
@@ -771,6 +774,8 @@ justify-content: space-between;
 max-width: 100%;
 
 text-align: center;
+
+margin-bottom: 100px;
 }
           
 .gallery-item {
@@ -780,6 +785,7 @@ height: 310px;
 text-align: center;
 background-color:antiquewhite;
 padding-top: 15px;
+border-radius:1.5em;
 } 
 
 .gallery-item p {
@@ -797,21 +803,103 @@ margin-left: 20px;
 margin-right: 20px;
 }
 
-.gallery-grid:hover .gallery-item{
-filter: blur(5px);
+.gallery-item:hover {
+  background-color: rgb(212, 187, 140);
 }
 
-.gallery-grid .gallery-item:hover {
-filter: blur(0px);
-}
+.group-nav {
+    background-color: rgba(135, 186, 227, 0.178);
+    padding: 15px 10px;
+    height: 25px;
+  }
 
-#gallery table{
-margin-bottom: 60px;
-}
+  .group-nav a{
+    background-color:rgb(188, 193, 250);
+  }
 
-#gallery table td{
-padding: 5px;
-}
+  .group-nav a:hover{
+    background-color:rgb(212, 187, 140);
+  }
+
+  .tableContainer{
+    background:rgb(233, 243, 251);
+    padding: 15px;
+    border-radius: 1.5em;
+    width: 1000px;
+    position: relative;
+    top: 0;
+    transition: top ease 0.5s;
+    margin-left: 65px;
+  }
+
+  .tableContainer:hover{
+    background:rgb(251, 250, 233);
+    top: -10px;
+  }
+
+
+  .gallery_table{
+    margin-bottom: 60px;
+    }
+    
+    .gallery_table td{
+    padding: 5px;
+    }
+
+  .group_table_title{
+    width: 100%;
+    text-align: center;
+  }
+
+/* Group 1 */
+  #galleryExt{
+  padding-top: 110px;
+  min-width: 1150px;
+  }
+  
+  #galleryExt main{
+  display:inline-block;
+  min-width: 1100px;
+  }
+  
+  #galleryExt main h2{
+    font-size: 32px;
+    padding: 20px;
+    height: 40px;
+    margin-left: 65px;
+    overflow: hidden;
+    border-right: .15em solid orange;
+    white-space: nowrap;
+    word-wrap: break-word;
+    max-width: 1000px;
+    width: 0;
+    animation: typing 8s forwards;
+  }
+
+/* Group 2 */
+#galleryInt{
+  padding-top: 110px;
+  min-width: 1150px;
+  }
+  
+  #galleryInt main{
+  display:inline-block;
+  min-width: 1100px;
+  }
+  
+  #galleryInt main h2{
+    font-size: 32px;
+    padding: 20px;
+    height: 40px;
+    margin-left: 65px;
+    overflow: hidden;
+    border-right: .15em solid orange;
+    white-space: nowrap;
+    word-wrap: break-word;
+    max-width: 1000px;
+    width: 0;
+    animation: typing 8s forwards;
+  }
 /*----------------------------*/
 
 /*About Page*/
