@@ -32,45 +32,7 @@
 		<main>
 			<h1> Experiment!</h1>
 			<div class = tutorial>
-				<button id = "tutorialButton">Show Tutorial</button>
-				<div class = "tutorialContainer">
-					<p>The Experiment Page is mean to let creators map out floor plans for their builders, giving them
-						an idea of the outcome before they start building while also making it easier to adjust plans
-						as the grid provides a dynamic display.
-						<br> <br>
-						First, let's go over the meanings of different colors!<br>
-						<img src = "images/colors.png" style = "height:200px; width:200px;"> <br>
-						White -> "Unactivated", equivalent to a surface not built on<br>
-						Red -> "Activated", assigned as planned to be part of something<br>
-						Blue -> Determined to be part of group ready to be made into a build<br>
-						Purple -> Part of a build/structure
-						<br><br>
-						Second, let's go over some general controls! <br>
-						1 -> Clicking on a square activates and deactivates them. When a square is red, it means its "activiated",
-						incidating an intention for it to be part of a build. When a square is white, it means it is "inactive". <br>
-						<img src = "images/click_example.png" style = "height:300px; width:500px;"> <br><br>
-						2 -> You can hold your mouse down and hover over squares to quickly activate a number of squares instead of
-						clicking each one. They all will turn red! <br>
-						<img src = "images/multiple_example.png" style = "height:300px; width:500px;"> <br><br>
-						3 -> Double clicking on any square will result in it turning blue. Neighoring/djacent red cells and purple
-						cells will turn blue as well. A message will appear indicating that the "group" is prepped for build creation.<br>
-						<img src = "images/blue_example.png" style = "height:300px; width:500px;"> <br><br>
-						4 -> To "create a build", hover over the "Create A Build" button and anter the build's title and build type. Any blue 
-						on the grid will turn to purple, indicating they are a part of the same build. For this reason, it is best to build a portion
-						at a time and then create a build.<br>
-						<img src = "images/build_example.png" style = "height:300px; width:500px;"> <br><br>
-						5 -> You can reset the grid to a blank state with the "Reset Grid to Blank" button. All builds will be erased.<br>
-						6 -> You can undo an action with the "Remove Most Recent Change" button. Every time you change the state of a square on the grid,
-						a new state is saved. Up to ten prior states are saved. Keep clicking the button until you reach the desired past state.<br>
-						<br>
-						Some Tips: <br>
-						Use the space to get an idea of what you want to do. Leave the details for later.<br>
-						Use simple measures to make conversions easier later.<br>
-						Label as you go so you know what everything should be!<br>
-						Use this space to get a general layout of what you want to build. You can always add to your
-						designs on paper. The creative process is limitless! <br>
-					</p>
-				</div>
+				<button id = "tutorialButton" onclick="window.open('tutorial.html', '_blank')">Show Tutorial</button>
 			</div>
 			<h3 id = "greeting" style = "padding-left: 10px;">Welcome, _____ </h3>
 			<div class = "controlBar">

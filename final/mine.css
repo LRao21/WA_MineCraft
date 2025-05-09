@@ -1052,6 +1052,26 @@ padding-left: 5px;
 
 /*Experiment*/
 
+/*Tutorial*/
+#tutorial{
+  padding-top:110px;
+  min-width: 1200px;
+  }
+
+#tutorial main h2{
+  font-size: 32px;
+    padding: 20px;
+    height: 40px;
+    margin-left: 65px;
+    overflow: hidden;
+    border-right: .15em solid orange;
+    white-space: nowrap;
+    word-wrap: break-word;
+    max-width: 1000px;
+    width: 0;
+    animation: typing 5s forwards;
+}
+
 #experiment{
 padding-top:110px;
 min-width: 1200px;
