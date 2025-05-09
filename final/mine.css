@@ -625,13 +625,13 @@ width:100%;
   background-color: rgb(94, 110, 190);
 }
 
-.aReview:hover .review{
+/* .aReview:hover .review{
   display: inline-block;
 }
 
 .aReview:hover .meta-content{
   display: inline-block;
-}
+} */
 
 /*side content*/
 .micro-reviews {
@@ -718,10 +718,7 @@ margin-bottom: 30px;
     word-wrap: break-word;
     max-width: 1000px;
     width: 0;
-}
-
-#gallery main:hover h2{
-  animation: typing 8s forwards;
+    animation: typing 8s forwards;
 }
 
 #gallery main p{
@@ -913,6 +910,31 @@ margin-right: 20px;
   }
   
   #gallerySteve main h2{
+    font-size: 32px;
+    padding: 20px;
+    height: 40px;
+    margin-left: 65px;
+    overflow: hidden;
+    border-right: .15em solid orange;
+    white-space: nowrap;
+    word-wrap: break-word;
+    max-width: 1000px;
+    width: 0;
+    animation: typing 8s forwards;
+  }
+
+  /* Group 4 */
+#galleryTrade{
+  padding-top: 110px;
+  min-width: 1150px;
+  }
+  
+  #galleryTrade main{
+  display:inline-block;
+  min-width: 1100px;
+  }
+  
+  #galleryTrade main h2{
     font-size: 32px;
     padding: 20px;
     height: 40px;

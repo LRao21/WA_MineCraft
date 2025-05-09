@@ -2775,3 +2775,25 @@ function sortByName(){
         allReviews[k].style.display = "inline-block";
     }   
 }
+
+//function to show review when associate button is clicked
+function showArticle(button){
+  var reviews = document.getElementsByClassName("aReview");
+  console.log("got the reviews!")
+  for (let i = 0; i < reviews.length; i++){
+    if (reviews[i].contains(button)){
+      var reviewClicked = reviews[i];
+      var reviewContent = reviewClicked.getElementsByClassName("review")[0];
+      var reviewMeta = reviewClicked.getElementsByClassName("meta-content")[0]
+      if (reviewContent.style.display !="inline-block"){
+        reviewContent.style.display = "inline-block";
+        reviewMeta.style.display = "inline-block";
+      } else {
+        reviewContent.style.display = "none";
+        reviewMeta.style.display = "none";
+      }
+      console.log("showed the review!")
+    }
+  }
+
+}
