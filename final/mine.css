@@ -707,6 +707,58 @@ background-color:rgba(106, 90, 165, 0.599);
 margin-bottom: 30px;
 }
 
+#gallery main h2{
+    font-size: 32px;
+    padding: 20px;
+    height: 40px;
+    margin-left: 65px;
+    overflow: hidden;
+    border-right: .15em solid orange;
+    white-space: nowrap;
+    word-wrap: break-word;
+    max-width: 1000px;
+    width: 0;
+}
+
+#gallery main:hover h2{
+  animation: typing 8s forwards;
+}
+
+#gallery main p{
+  margin-bottom: 50px;
+}
+
+/* Redirection Page*/
+.galleryContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 50px;
+  margin-left:0px;
+}
+
+.gallery-card {
+  background:rgb(195, 224, 251);
+  height: 200px;
+  text-align: center;
+  margin: 10px;
+  margin-left: 0px;
+  border-radius: 1.5em;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+  top: 0;
+  transition: top ease 0.5s;
+  display:inline-block;
+}
+
+.gallery-card:hover{
+  top:-10px;
+  background-color:rgba(214, 181, 19, 0.839);
+}
+
+.gallery-card p{
+  margin: auto;
+}
 /* Gallery */
 .gallery-grid {
 display: grid;
