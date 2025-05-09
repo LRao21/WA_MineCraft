@@ -95,8 +95,7 @@ a {
   padding: 5px;
   font-family: "Roboto";
   text-decoration: none;
-  color:rgb(104, 48, 104);
-  font-weight: bold;
+  color:rgb(125, 7, 125);
 }
 
 a:hover{
@@ -104,7 +103,6 @@ a:hover{
   font-family: "Roboto";
   text-decoration: none;
   color:rgb(94, 110, 190);
-  font-weight: bold;
 }
 /*---------------------*/
 
