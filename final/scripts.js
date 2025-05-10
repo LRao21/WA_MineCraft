@@ -2020,6 +2020,35 @@ let mapGroups = default_village.builds;
 
 const cursorDataDiv = document.getElementById("cursorData");
 
+/*FOR VS*/
+let logIndex = 1;
+showLog(logIndex);
+
+function plusLogSlide(n) {
+  showLog(logIndex += n);
+}
+
+function currentLogSlide(n) {
+  showLog(logIndex = n);
+}
+
+function showLog(n) {
+  let slides = document.getElementsByClassName("build_segment");
+  if (n > slides.length) {
+    logIndex = 1
+  }
+  if (n < 1) {
+    logIndex = slides.length
+  }
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[logIndex-1].style.display = "block";
+  slides[logIndex-1].style.animation = "none";
+  void slides[logIndex - 1].offsetWidth;
+  slides[logIndex-1].style.animation = "shiftBack 4s ease";
+}
+
 /*FOR MAP*/
 function setUpDefault(){
     var index = 0;
@@ -2228,7 +2257,6 @@ function takeInInput(){
   document.body.appendChild(input);
   input.click();  
 }
-
 
 /*FOR FILE HANDLING*/
 function createFile(){

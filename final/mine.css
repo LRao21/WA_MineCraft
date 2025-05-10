@@ -262,6 +262,12 @@ align-items: center;
 100% { color: rgb(106, 10, 136); }
 }
 
+@keyframes shiftBack {
+  0% { background-color: rgb(135, 186, 227) }
+  50% { background-color: rgb(185, 219, 245) }
+  100% { background-color: rgb(153, 217, 251) }
+  }
+
 .title h1{
 margin-top: 250px;
 font-size: 60px;
@@ -850,7 +856,6 @@ margin-right: 20px;
     top: -10px;
   }
 
-
   .gallery_table{
     margin-bottom: 60px;
     }
@@ -1384,4 +1389,49 @@ text-align: center;
 font-weight: normal;
 background-color:rgba(106, 90, 165, 0.599);
 margin-bottom: 30px;
+}
+
+.carousel-container {
+  max-width: 600px;
+  height: 400px;
+  position: relative;
+  margin:auto;
+  overflow:hidden;
+  margin-top: 40px;
+}
+
+.carousel-container .build_segment h3:hover{
+  color: rgb(106, 10, 136);
+}
+
+.build_segment{
+  display: none;
+  background-color: rgb(135, 186, 227);
+  border-radius: 1.5em;
+  margin:auto auto;
+  width: 80%;
+  text-align: center;
+  height: 260px;
+  padding-top: 110px;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  user-select: none;
+  margin-top: -50px; 
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.next {
+  right: 0;
 }
