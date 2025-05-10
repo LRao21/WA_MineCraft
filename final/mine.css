@@ -967,33 +967,6 @@ background-color:rgba(106, 90, 165, 0.599);
 margin-bottom: 30px;
 }
 
-.navigation{
-background:white;
-height: 400px;
-display: grid;
-grid-template-columns: 50% 50%;
-align-items: center;
-column-gap: 5px;
-margin-bottom: 70px;
-}
-
-.navigation a {
-padding-top:20%;
-padding-bottom:20%;
-background-color: rgb(194, 202, 248);
-color: whitesmoke;
-font-family:"Bodoni Moda SC";
-font-size: 46px;
-text-align: center;
-line-height: 150%;
-animation: fadeIntoView 5s;
-height: 170px;
-}
-
-.navigation a:hover {
-animation: shiftColors 10s;
-}
-
 #about img {
 width: 190px;
 height: 250px;
@@ -1001,47 +974,65 @@ margin: 20px;
 margin-top: 5px;
 }
 
-#about h3{
-text-align: center;
-margin-bottom: 50px;
-font-size: 50px;
+.faq{
+  margin-bottom: 20px;
+}
+
+.faq button {
+  width: 100%;
+  background-color: rgb(210, 236, 248);
+  font-size: 18px;
+  font-family: 'Roboto';
+  color: rgb(125, 7, 125);
+  text-align: left;
+  border: transparent;
+  padding: 2px;
+  height: 40px;
+}
+
+.faq button:hover {
+  background-color: rgba(81, 7, 104, 0.317)
+}
+
+.faq_content {
+  background-color: rgb(153, 217, 251);
+  padding: 10px;
+  display:none;
 }
 
 .team_member {
-background-color: black;
-display: grid;
-grid-template-columns: repeat (3, 1fr);
-grid-template-rows: repeat (2, 1fr);
-grid-template-areas:
-"image title title"
-"image words words";
-row-gap: 5px;
-
-margin-bottom: 50px;
-height: 115%;
+  background-color: black;
+  display: grid;
+  grid-template-columns: repeat (3, 1fr);
+  grid-template-rows: repeat (2, 1fr);
+  grid-template-areas:
+  "images title title"
+  "images wds wds";
+  row-gap: 5px;
+  margin-bottom: 50px;
 }
 
 .team_member h3{
-background-color: rgb(255, 242, 218);
-grid-area: title;
-color:rgba(2, 2, 87, 0.695);
-font-size: 20px;
-margin:2px;
-padding-top: 10%;
-padding-bottom: 2%;
+  grid-area: title;
+  text-align: center;
+  font-size: 30px;
+  background-color: rgb(255, 242, 218);
+  color:rgba(2, 2, 87, 0.695);
+  margin:2px;
+  padding-top: 5%;
+  padding-bottom: 7%;
 }
 
 .team_member img{
 background-color: rgb(255, 242, 218);
-grid-area:image;
+grid-area:images;
 width: 100%;
 height: 100%;
 }
 
 .team_member p{
 background-color: rgb(255, 242, 218);
-grid-area: words;
-height:150%;
+grid-area: wds;
 margin:2px;
 margin-top:-50px;
 padding-bottom: 2px;

@@ -2795,5 +2795,24 @@ function showArticle(button){
       console.log("showed the review!")
     }
   }
+}
 
+  /* FOR ABOUT PAGE FAQS */
+
+//function to show FAQ content when associated button is clicked
+function showContent(button){
+  var faqs = document.getElementsByClassName("faq");
+  console.log("got the faqs!")
+  for (let i = 0; i < faqs.length; i++){
+    if (faqs[i].contains(button)){
+      var faqsClicked = faqs[i];
+      var faqsContent = faqsClicked.getElementsByClassName("faq_content")[0];
+      if (faqsContent.style.display !="inline-block"){
+        faqsContent.style.display = "inline-block";
+      } else {
+        faqsContent.style.display = "none";
+      }
+      console.log("showed the faq!")
+    }
+  }
 }
