@@ -2024,6 +2024,9 @@ const cursorDataDiv = document.getElementById("cursorData");
 function setUpDefault(){
     var index = 0;
     const newGridForMap = document.getElementById("forMap");
+    while (newGridForMap.firstChild) {
+      newGridForMap.removeChild(newGridForMap.firstChild);
+    }
     console.log("started map!");
     for (var h = 0; h < default_village.height; h++){
         var row = document.createElement("div");
@@ -2114,9 +2117,118 @@ function setUpDefault(){
     }
 }
 
-function createFromFile(){
-    return false;
+function createFromFile(file){
+  var structures = file.builds;
+  if (structures){
+    console.log("loaded builds");
+  }
+  var index = 0;
+  const newGridForMap = document.getElementById("forMap");
+  while (newGridForMap.firstChild) {
+    newGridForMap.removeChild(newGridForMap.firstChild);
+  }
+  console.log("cleaned map!");
+  console.log("started map!");
+  for (var h = 0; h < file.height; h++){
+      var row = document.createElement("div");
+      row.className = "row";
+      newGridForMap.appendChild(row);
+
+      for (var w = 0; w < file.width; w++){
+          var col = document.createElement("div");
+          col.className = "col";
+          col.id = String(index) + "Map";
+          index = index + 1;
+          col.style.width = String(800/(file.width)) + "px";
+          col.style.height = String(800/(file.width)) + "px";
+          col.style.backgroundColor = "white";
+          row.appendChild(col);
+      } 
+  }
+  console.log("made grid");
+
+  for (let bL = 0; bL < structures.length; bL++){
+      for (var c = 0; c < structures[bL].cells.length; c++){
+          var cellsFrom = structures[bL].cells[c];
+          if (cellsFrom!=null){
+              var cellIndex = cellsFrom.index + "Map";
+              document.getElementById(cellIndex).style.backgroundColor = "purple";
+              console.log("made " + cellIndex + " purple!");
+      
+              document.getElementById(cellIndex).addEventListener("mouseover", function(event) {
+                  cursorDataDiv.style.fontSize = "22px";
+                  cursorDataDiv.style.display = "block";
+                  // image = "";
+                  // if (default_village.builds[bL].type == "Path"){
+                  //     cursorDataDiv.innerHTML = "<i style = 'color:pink'; class='fa-solid fa-road-circle-check'></i>";
+                  //     image = "images/dirtPath.jpeg"
+                  // } else if (default_village.builds[bL].type == "animal_pen"){
+                  //     cursorDataDiv.innerHTML = "<i style = 'color:pink'; class='fa-solid fa-shield-cat'></i>";
+                  //     image = "images/animal_pen.png"
+                  // } else if (default_village.builds[bL].type == "lodging"){
+                  //     cursorDataDiv.innerHTML = "<i style = 'color:pink'; class='fa-solid fa-house'></i>";
+                  //     if (default_village.builds[bL].title == "armorer's house"){
+                  //       image = "images/armorer.png"
+                  //     } else if (default_village.builds[bL].title == "large house"){
+                  //       image = "images/bigHouse1.png"
+                  //     }
+                  // } else if (default_village.builds[bL].type == "religion"){
+                  //     cursorDataDiv.innerHTML = "<i style = 'color:pink'; class='fa-solid fa-person-praying'></i>";
+                  //     image = "images/temple.png"
+                  // } else if (default_village.builds[bL].type == "public"){
+                  //     cursorDataDiv.innerHTML = "<i style = 'color:pink'; class='fa-solid fa-book'></i>";
+                  //     image = "images/library.png"
+                  // }
+                  cursorDataDiv.innerHTML = "";
+                  cursorDataDiv.innerHTML += ", Title: " + String(structures[bL].title);
+                  // cursorDataDiv.innerHTML +="<img style = 'width: 200px; height: 250px;' src = '" + image + "'>";
+
+                  document.addEventListener("mousemove", function(event) {
+                      cursorDataDiv.style.left = event.pageX + 10 + "px";  
+                      cursorDataDiv.style.top = event.pageY + 10 + "px";  
+                  });
+              });
+
+              document.getElementById(cellIndex).addEventListener("mouseleave", function() {
+                  cursorDataDiv.style.display = "none";
+              });
+  
+          } else {
+              console.log("cell is null!");
+          }
+      }
+  }
 }
+
+function takeInInput(){
+  const profiles = document.getElementsByClassName("defaultData")[0];
+  if (profiles!=null){
+    profiles.style.display = "none";
+    console.log("default removed!");
+  }
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = 'application/json';
+  input.style.display = 'none';
+  input.addEventListener('change', (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.onload = function (event) {
+        try {
+          const jsonData = JSON.parse(event.target.result);
+          console.log('Parsed JSON:', jsonData);
+          createFromFile(jsonData); 
+        } catch (err) {
+          console.error('Invalid JSON file:', err);
+        }
+      };
+      reader.readAsText(file); 
+    document.body.removeChild(input);
+  });
+  document.body.appendChild(input);
+  input.click();  
+}
+
 
 /*FOR FILE HANDLING*/
 function createFile(){
