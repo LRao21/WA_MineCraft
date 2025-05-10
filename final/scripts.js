@@ -2245,18 +2245,131 @@ function createFile(){
     console.log("height: " + height);
 
     const myFile = {};
+    myFile.tag = "correctBuildJson";
     myFile.width = width;
     myFile.height = height;
     myFile.builds = groups;
     console.log("made file");
+
     const jsonString = JSON.stringify(myFile, null, 2);
     const blob = new Blob([jsonString], { type: "application/json" });
     console.log("made blob");
+
     const a = document.getElementById("jsonFile");
     a.href = URL.createObjectURL(blob);
     a.download = "your_build.json";
-    setTimeout(() => URL.revokeObjectURL(url), 100);
+    setTimeout(() => URL.revokeObjectURL(a.href), 100);
     console.log("done with file");
+}
+
+function createFromABuild(){
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = 'application/json';
+  input.style.display = 'none';
+
+  input.addEventListener('change', (event) => {
+    var file = event.target.files[0];
+    const reader = new FileReader();
+    reader.onload = function (event) {
+        try {
+          const jsonData = JSON.parse(event.target.result);
+          file = jsonData;
+          console.log('Parsed JSON:', jsonData);
+
+          var structures = file.builds;
+          if (structures){
+            console.log("loaded builds");
+          }
+        } catch (err) {
+          console.error('Invalid JSON file:', err);
+        }
+        var index = 0;
+          const newGridForMap = document.getElementsByClassName("emptyGrid")[0];
+          if (newGridForMap.firstChild){
+            while (newGridForMap.firstChild) {
+              newGridForMap.removeChild(newGridForMap.firstChild);
+            }
+          }
+          for (var h = 0; h < file.height; h++){
+              var row = document.createElement("div");
+              row.className = "row";
+              newGridForMap.appendChild(row);
+
+              for (var w = 0; w < file.width; w++){
+                  var col = document.createElement("div");
+                  col.className = "col";
+                  col.id = String(index);
+                  index = index + 1;
+                  col.style.width = String(800/(file.width)) + "px";
+                  col.style.height = String(800/(file.width)) + "px";
+                  col.style.backgroundColor = "white";
+
+                  col.addEventListener("click", function() {
+                    if (this.style.backgroundColor != "blue" && this.style.backgroundColor != "purple"){
+                        this.style.backgroundColor = 
+                        (this.style.backgroundColor === "red") ? "white" : "red";
+                        
+                        var copy = copyGrid(height, width, scale, newGridFor);
+                        if (lastTen.length >= 10){
+                            var old = lastTen.splice(0,1);
+                        }
+                        lastTen.push(copy);
+                    }
+                    });
+                  col.addEventListener("mouseover", function(e) {
+                    e.preventDefault()
+                    if (mouseHovering && this.style.backgroundColor != "blue") {
+                        this.style.backgroundColor = "red";
+                        var copy = copyGrid(height, width, scale, newGridFor);
+                        if (lastTen.length >= 10){
+                            var old = lastTen.splice(0,1);
+                        }                
+                        lastTen.push(copy);
+                    } 
+                    });
+                  col.addEventListener('dblclick', function() {
+                    if (this.style.backgroundColor != "blue"){
+                        alert('This part of the grid is now prepped for build assignment!');
+                        this.style.backgroundColor = "red";
+                        neighboringCells.push(this.id);
+                        findNeighbors(neighboringCells, newGridFor, width, height, scale,
+                            this, this.style.backgroundColor);
+                        console.log("done!");
+                        this.style.backgroundColor = "blue";
+                        for (var k = 0; k < neighboringCells.length; k++){
+                            document.getElementById(neighboringCells[k]).style.backgroundColor = "blue";
+                            console.log("colored!");
+                        }
+                        var copy = copyGrid(height, width, scale, newGridFor);
+                        if (lastTen.length >= 10){
+                            var old = lastTen.splice(0,1);
+                        }
+                        lastTen.push(copy);
+                    }
+                    });
+                  row.appendChild(col);
+              } 
+          }
+          console.log("made grid");
+          for (let bL = 0; bL < structures.length; bL++){
+              for (var c = 0; c < structures[bL].cells.length; c++){
+                  var cellsFrom = structures[bL].cells[c];
+                  if (cellsFrom!=null){
+                      var cellIndex = cellsFrom.index;
+                      console.log("made " + cellIndex + String(document.getElementById(cellIndex).style.backgroundColor));
+                      document.getElementById(cellIndex).style.backgroundColor = cellsFrom.type;
+                  } else {
+                      console.log("cell is null!");
+                  }
+              }
+          }
+          document.body.removeChild(input);
+      };
+    reader.readAsText(file);
+  });
+  document.body.appendChild(input);
+  input.click();
 }
 
 /* FOR GRID */
@@ -2552,6 +2665,9 @@ function createGroup(neighboringCells, currentGrid){
     for (var i = 0; i < neighboringCells.length; i++){
         const block = {};
         block.type = (document.getElementById(neighboringCells[i]).style.backgroundImage);
+        if (block.type==""){
+          block.type = (document.getElementById(neighboringCells[i]).style.backgroundColor);
+        }
         document.getElementById(neighboringCells[i]).style.backgroundColor = "purple";
         block.index = neighboringCells[i];
         cells.push(block);
