@@ -1415,6 +1415,13 @@ margin-bottom: 30px;
   padding-top: 110px;
 }
 
+.build_segment img {
+  width: 300px;
+  height: 300px;
+  margin-top: -80px;
+  border: solid 10px rgb(135, 186, 227);
+}
+
 .prev, .next {
   cursor: pointer;
   position: absolute;
@@ -1434,4 +1441,26 @@ margin-bottom: 30px;
 
 .next {
   right: 0;
+}
+
+#visual_essay_log1{
+  padding-top: 110px;
+  }
+  
+  #visual_essay_log1 main{
+  display:inline-block;
+  }
+
+#visual_essay_log1 main h2{
+  font-size: 32px;
+    padding: 20px;
+    height: 40px;
+    margin-left: 65px;
+    overflow: hidden;
+    border-right: .15em solid orange;
+    white-space: nowrap;
+    word-wrap: break-word;
+    max-width: 1000px;
+    width: 0;
+    animation: typing 3s forwards;
 }
